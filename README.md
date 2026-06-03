@@ -8,11 +8,17 @@ Proyecto web desarrollado para el curso de Aplicaciones Web.
 
 respawn-store/
 ├── components/   → navbar y footer compartidos
+
 ├── css/          → estilos del sitio
+
 ├── docs/         → contenido de texto de cada página
+
 ├── imagenes/     → imágenes del sitio
+
 ├── index/        → página principal
+
 ├── paginas/      → páginas internas
+
 └── script/       → archivos JavaScript
 
 ## Arquitectura
