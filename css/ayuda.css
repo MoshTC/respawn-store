@@ -1,0 +1,270 @@
+/* =============================================
+   HERO BASE
+   Estilos compartidos por las 3 páginas de ayuda.
+   ayuda.html, preguntas-frecuentes.html y formulario-contacto.html
+   usan la clase page-hero para heredar estos estilos.
+   ============================================= */
+.page-hero {
+  padding: 3rem 2rem;
+  /* degradado oscuro de fondo */
+  background: linear-gradient(135deg, #0d0d1a 0%, #12122a 50%, #0a0a1e 100%);
+  border-bottom: 1px solid var(--border);
+}
+
+.page-hero h1 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: .5rem;
+}
+
+.page-hero p {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* =============================================
+   HERO AYUDA
+   Sobreescribe page-hero solo para ayuda.html.
+   Es más grande y centrado porque tiene el buscador debajo.
+   ============================================= */
+.ayuda-hero {
+  padding: 4rem 2rem;    /* más espacio vertical que el resto */
+  text-align: center;    /* centra el título, subtítulo y buscador */
+}
+
+.ayuda-hero h1 {
+  font-size: 52px;       /* más grande que las otras páginas */
+  margin-bottom: .75rem;
+}
+
+.ayuda-hero p {
+  margin-bottom: 2rem;   /* separa el subtítulo del buscador */
+}
+
+/* =============================================
+   BUSCADOR DEL HERO
+   Solo existe en ayuda.html.
+   Usa flexbox para alinear ícono + input + botón en fila.
+   ============================================= */
+.ayuda-search {
+  display: flex;
+  align-items: center;
+  background: var(--bg4);
+  border: 1px solid var(--border2);
+  border-radius: 50px;           /* forma de píldora */
+  padding: 6px 6px 6px 18px;    /* más padding a la izquierda para el ícono */
+  max-width: 540px;
+  margin: 0 auto;                /* centra el buscador en la página */
+  gap: 10px;
+}
+
+.ayuda-search i {
+  font-size: 18px;
+  color: var(--dim);
+  flex-shrink: 0;                /* el ícono no se encoge si la pantalla es chica */
+}
+
+.ayuda-search input {
+  flex: 1;                       /* ocupa todo el espacio entre el ícono y el botón */
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.ayuda-search input::placeholder {
+  color: var(--dim);
+}
+
+.ayuda-search .btn-primary {
+  border-radius: 50px;           /* redondea el botón para que coincida con la píldora */
+  padding: 9px 22px;
+  flex-shrink: 0;                /* el botón no se encoge */
+}
+
+/* =============================================
+   CATEGORÍAS DE AYUDA
+   Grid de 6 tarjetas en 3 columnas.
+   Cada tarjeta tiene ícono, título, descripción y link.
+   ============================================= */
+.ayuda-categorias-titulo {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+.ayuda-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+  gap: 1rem;
+}
+
+.ayuda-card {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .6rem;
+  transition: border-color .2s, transform .2s;
+}
+
+/* efecto hover: borde azul y sube 3px */
+.ayuda-card:hover {
+  border-color: var(--cyan);
+  transform: translateY(-3px);
+}
+
+.ayuda-card > i {
+  font-size: 32px;
+  color: var(--cyan);
+}
+
+.ayuda-card-nombre {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.ayuda-card-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.ayuda-card-link {
+  font-size: 13px;
+  color: var(--cyan);
+  text-decoration: none;
+  margin-top: .5rem;
+  transition: opacity .2s;
+}
+
+.ayuda-card-link:hover {
+  opacity: .7;
+}
+
+/* =============================================
+   ARTÍCULOS POPULARES
+   Lista de links con bullet points.
+   padding-left crea el espacio para los bullets.
+   ============================================= */
+.ayuda-lista {
+  padding-left: 1.5rem;  /* espacio para los bullets de la lista */
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+
+.ayuda-lista li {
+  color: var(--muted);
+}
+
+.ayuda-lista a {
+  color: var(--cyan);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.ayuda-lista a:hover {
+  text-decoration: underline;
+}
+
+/* =============================================
+   SECCIÓN CONTACTO
+   3 tarjetas de canales de contacto en grid.
+   Fondo diferente (bg2) para distinguirla visualmente.
+   ============================================= */
+.ayuda-contacto {
+  text-align: center;
+  background: var(--bg2);        /* fondo más oscuro para separar la sección */
+}
+
+.ayuda-contacto h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: .5rem;
+}
+
+/* el > selecciona solo el párrafo directo hijo, no los de las tarjetas */
+.ayuda-contacto > p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 1.5rem;
+}
+
+.ayuda-contacto-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  text-align: left;              /* el texto dentro de las tarjetas va a la izquierda */
+}
+
+.ayuda-contacto-card {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+
+.ayuda-contacto-card i {
+  font-size: 28px;
+  color: var(--cyan);
+}
+
+.ayuda-contacto-nombre {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.ayuda-contacto-card p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.ayuda-contacto-card .btn-primary {
+  width: fit-content;            /* el botón no ocupa todo el ancho */
+  margin-top: .5rem;
+}
+
+/* =============================================
+   BANNER FINAL
+   Franja con texto a la izquierda y botón a la derecha.
+   justify-content: space-between los separa en los extremos.
+   ============================================= */
+.ayuda-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* texto izquierda, botón derecha */
+  background: var(--bg3);
+  border-top: 1px solid var(--border);
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.ayuda-banner h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: .35rem;
+}
+
+.ayuda-banner p {
+  font-size: 13px;
+  color: var(--muted);
+}

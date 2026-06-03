@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- codificación de caracteres: permite tildes, ñ y símbolos especiales -->
+    <meta charset="UTF-8" />
+    <!-- hace que la página se adapte a cualquier tamaño de pantalla -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Preguntas Frecuentes — Respawn Store</title>
+
+    <!-- pre-conexión a Google Fonts para cargar más rápido -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- fuentes del proyecto -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- librería de iconos Tabler — se usan con <i class="ti ti-nombre"> -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"
+    />
+    <!-- estilos globales del proyecto (colores, navbar, footer, botones) -->
+    <link rel="stylesheet" href="../css/base.css" />
+    <!-- ayuda.css contiene page-hero (base del hero compartida con las 3 páginas) -->
+    <link rel="stylesheet" href="../css/ayuda.css" />
+    <!-- estilos propios de esta página: tabs, acordeón FAQ -->
+    <link rel="stylesheet" href="../css/preguntas.css" />
+  </head>
+  <body>
+
+    <!-- navbar inyectado por components.js al cargar la página -->
+    <div id="navbar"></div>
+
+    <!-- HERO con breadcrumb: muestra la ruta Inicio > Centro de Ayuda > página actual
+         breadcrumb-actual marca la página actual en negrita  -->
+    <div class="page-hero">
+      <nav class="breadcrumb">
+        <a href="../index/index.html">Inicio</a>
+        <span>/</span>
+        <a href="ayuda.html">Centro de Ayuda</a>
+        <span>/</span>
+        <span class="breadcrumb-actual">Preguntas Frecuentes</span>
+      </nav>
+      <h1>Preguntas Frecuentes</h1>
+      <p>
+        Encuentra respuestas rápidas a las consultas mas comunes de nuestra
+        comunidad
+      </p>
+    </div>
+
+    <!-- TABS DE FILTRO
+         Cada botón tiene data-filter que coincide con el data-categoria
+         de las secciones de abajo. preguntas.js lee estos atributos para filtrar. -->
+    <div class="faq-tabs">
+      <button class="faq-tab active" data-filter="todo">Todo</button>
+      <button class="faq-tab" data-filter="pedidos">Pedidos</button>
+      <button class="faq-tab" data-filter="pagos">Pagos</button>
+      <button class="faq-tab" data-filter="envios">Envíos</button>
+      <button class="faq-tab" data-filter="cuenta">Cuenta</button>
+      <button class="faq-tab" data-filter="soporte">Soporte</button>
+    </div>
+
+    <!-- SECCIÓN PEDIDOS
+         data-categoria="pedidos" debe coincidir con data-filter="pedidos" del tab.
+         Cada faq-item tiene: botón visible (pregunta) + div oculto (respuesta).
+         preguntas.js agrega/quita la clase "open" al hacer clic. -->
+    <div class="faq-seccion" id="pedidos" data-categoria="pedidos">
+      <div class="faq-categoria-header">PEDIDOS Y COMPRAS</div>
+
+      <div class="faq-item" id="faq-rastrear">
+        <button class="faq-pregunta">
+          ¿Cómo puedo rastrear el estado de mi pedido?
+          <i class="ti ti-chevron-down"></i>
+        </button>
+        <div class="faq-respuesta">
+          <p>
+            <!-- faq-ruta resalta rutas de navegación dentro de la app -->
+            Ingresa a <span class="faq-ruta">Mi Cuenta › Mis Pedidos</span>, selecciona tu pedido y podrás ver el estado en tiempo real. Cuando despachemos tu pedido, también te enviaremos un correo con el enlace de seguimiento.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-pregunta">
+          ¿Puedo modificar o cancelar un pedido después de realizarlo?
+          <i class="ti ti-chevron-down"></i>
+        </button>
+        <div class="faq-respuesta">
+          <p>
+            Puedes modificar o cancelar tu pedido dentro de las 2 horas posteriores a la compra. Contáctanos por chat o correo y lo gestionamos de inmediato.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item" id="faq-devolucion">
+        <button class="faq-pregunta">
+          ¿Qué hago si recibí un producto incorrecto o dañado?
+          <i class="ti ti-chevron-down"></i>
+        </button>
+        <div class="faq-respuesta">
+          <p>
+            Fotografía el producto recibido y envíanos las imágenes a través del formulario de contacto. Procederemos con el cambio o reembolso según corresponda.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECCIÓN PAGOS -->
+    <div class="faq-seccion" id="pagos" data-categoria="pagos">
+      <div class="faq-categoria-header">PAGOS Y FACTURACIÓN</div>
+
+      <div class="faq-item" id="faq-pago">
+        <button class="faq-pregunta">
+          ¿Qué métodos de pago aceptan?
+          <i class="ti ti-chevron-down"></i>
+        </button>
+        <div class="faq-respuesta">
+          <p>
+            Aceptamos Visa, Mastercard, Yape, Plin, transferencia bancaria y pago contra entrega en Lima. Todos los pagos son seguros.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-pregunta">
+          ¿Cómo puedo solicitar una factura?
+          <i class="ti ti-chevron-down"></i>
+        </button>
+        <div class="faq-respuesta">
+          <p>
+            Tu comprobante de pago se genera automáticamente con cada compra. Puedes descargarlo desde <span class="faq-ruta">Mi Cuenta › Mis Pedidos</span> en cualquier momento.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECCIÓN ENVÍOS -->
+    <div class="faq-seccion" id="envios" data-categoria="envios">
+      <div class="faq-categoria-header">ENVÍOS Y ENTREGAS</div>
+
+      <div class="faq-item" id="faq-envio">
+        <button class="faq-pregunta">
+          ¿Cuánto tiempo tarda el envío?
+          <i class="ti ti-chevron-down"></i>
+        </button>
+        <div class="faq-respuesta">
+          <p>
+            En Lima Metropolitana el plazo es de 1 a 3 días hábiles. Para provincias, de 3 a 7 días según la localidad. Te notificamos por correo en cuanto tu pedido salga.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-pregunta">
+          ¿Puedo cambiar la dirección de envío después de hacer un pedido?
+          <i class="ti ti-chevron-down"></i>
+        </button>
+        <div class="faq-respuesta">
+          <p>
+            Puedes actualizar la dirección dentro de las 2 horas posteriores al pedido, antes de que entre a proceso de preparación. Contáctanos por chat a la brevedad si necesitas hacerlo.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-pregunta">
+          ¿Qué hago si mi pedido no llega a tiempo?
+          <i class="ti ti-chevron-down"></i>
+        </button>
+        <div class="faq-respuesta">
+          <p>
+            Verifica el estado con el número de guía que te enviamos por correo. Si la fecha estimada ya venció sin novedades, contáctanos y revisamos el caso con la empresa de transporte.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-pregunta">
+          ¿Tienen envío gratis? ¿Desde qué monto?
+          <i class="ti ti-chevron-down"></i>
+        </button>
+        <div class="faq-respuesta">
+          <p>Sí. Los pedidos desde S/.500 tienen envío gratuito en Lima Metropolitana. Para provincias, el envío es gratuito desde S/.800.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECCIÓN CUENTA -->
+    <div class="faq-seccion" id="cuenta" data-categoria="cuenta">
+      <div class="faq-categoria-header">CUENTA Y PERFIL</div>
+
+      <div class="faq-item" id="faq-contrasena">
+        <button class="faq-pregunta">
+          ¿Cómo puedo restablecer mi contraseña?
+          <i class="ti ti-chevron-down"></i>
+        </button>
+        <div class="faq-respuesta">
+          <p>
+            En la pantalla de inicio de sesión, haz clic en "¿Olvidaste tu contraseña?", ingresa tu correo y te enviaremos un enlace para crear una nueva. Revisa también tu carpeta de spam si no lo recibes.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-pregunta">
+          ¿Cómo puedo actualizar mi información personal?
+          <i class="ti ti-chevron-down"></i>
+        </button>
+        <div class="faq-respuesta">
+          <p>
+            Accede a <span class="faq-ruta">Mi Cuenta › Configuración</span> para actualizar tu nombre, correo, dirección de envío y contraseña.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-pregunta">
+          ¿Cómo puedo eliminar mi cuenta?
+          <i class="ti ti-chevron-down"></i>
+        </button>
+        <div class="faq-respuesta">
+          <p>
+            Por el momento esta opción no está disponible desde la plataforma. Escríbenos a soporte@respawnstore.com con el asunto "Eliminar cuenta" y lo procesamos en un plazo de 48 horas hábiles.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECCIÓN SOPORTE -->
+    <div class="faq-seccion" id="soporte" data-categoria="soporte">
+      <div class="faq-categoria-header">SOPORTE Y ASISTENCIA</div>
+
+      <div class="faq-item">
+        <button class="faq-pregunta">
+          ¿Cómo puedo contactar al soporte?
+          <i class="ti ti-chevron-down"></i>
+        </button>
+        <div class="faq-respuesta">
+          <p>
+            Puedes escribirnos por chat para una respuesta inmediata, por correo si tu consulta no es urgente, o completar el formulario de contacto para casos que requieran más detalle.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-pregunta">
+          ¿Cuál es el horario de atención del soporte?
+          <i class="ti ti-chevron-down"></i>
+        </button>
+        <div class="faq-respuesta">
+          <p>
+            Atendemos de lunes a viernes de 9:00 a.m. a 6:00 p.m. y los sábados de 9:00 a.m. a 1:00 p.m. (hora Lima). Los domingos no hay atención.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BANNER FINAL — reutiliza los estilos de ayuda.css -->
+    <div class="ayuda-banner">
+      <div>
+        <h2>¿Necesitas ayuda personalizada?</h2>
+        <p>Nuestro equipo de soporte está listo para ayudarte.</p>
+      </div>
+      <a href="formulario-contacto.html" class="btn-primary">Contactar soporte</a>
+    </div>
+
+    <!-- footer inyectado por components.js -->
+    <div id="site-footer"></div>
+
+    <!-- components.js inyecta navbar y footer -->
+    <script src="../components/components.js"></script>
+    <!-- preguntas.js maneja el acordeón FAQ y los tabs de filtro -->
+    <script src="../script/preguntas.js"></script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+Centro de Ayuda
+
+paginas/ayuda.html
+Centro de Ayuda
+
+paginas/preguntas-frecuentes.html
+Preguntas Frecuentes
+
+paginas/formulario-contacto.html
+Formulario de Contacto
+
+
+--- CONTENIDO ---
+
+¿Tienes alguna duda o inconveniente? Encuentra la respuesta que necesitas.
+
+Categorías de ayuda rápida
+
+Mi Pedido
+Consulta el estado de tu compra, rastrea tu envío o reporta un problema.
+
+Pagos y Facturación
+Revisa tus métodos de pago, descarga tu comprobante o reporta un cobro incorrecto.
+
+Devoluciones
+Conoce los plazos y el proceso para devolver o cambiar un producto.
+
+Envío y entrega
+Información sobre plazos, costos y seguimiento de tu pedido.
+
+Mi Cuenta
+Actualiza tus datos personales, contraseña y preferencias de cuenta.
+
+Configuración
+Ajusta tus preferencias de notificaciones y privacidad.
+
+
+Artículos Populares
+
+¿Cómo rastrear mi pedido?
+¿Cuáles son los métodos de pago?
+¿Cómo iniciar una devolución o cambio?
+¿Cuánto tiempo tarda mi envío?
+¿Cómo restablecer mi contraseña?
+
+
+¿No encontraste lo que buscabas?
+Contáctanos por el canal que prefieras y te ayudamos.
+
+Chat en vivo
+Un agente disponible te responde en menos de 5 minutos.
+
+Correo electrónico
+Escríbenos y te respondemos en menos de 24 horas hábiles.
+
+Llámanos
+Lun - Vie: 9:00 AM - 6:00 PM
++51 9XX XXX XXX
+
+
+¿Necesitas atención personalizada?
+Completa el formulario y un asesor se comunicará contigo a la brevedad.

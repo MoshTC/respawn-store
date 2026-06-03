@@ -15,35 +15,8 @@
 </head>
 <body>
 
-  <!-- Barra de navegacion -->
-  <nav>
-    <!-- logo de la pagina -->
-    <a href="*">
-    <img src="../imagenes/logoresblue.png" alt="Respawn Store" height="40">
-    </a>
-    <!-- class donde estan las opciones de navegacion -->
-     <!-- lista desordenada -->
-    <ul class="nav-links">
-      <li><a href="*">Inicio</a></li>
-      <li><a href="*">Productos</a></li>
-      <li><a href="*">Comunidad</a></li>
-      <li><a href="*">Ayuda</a></li>
-    </ul>
-    <!-- el buscador -->
-    <div class="search-box">
-      <i class="ti ti-search" aria-hidden="true"></i>
-      <input type="text" placeholder="Buscar consolas accesorios...">
-    </div>
-
-    <div class="socials">
-      <!-- aria-label hace que la pagina sea mas accesibles para personas con discapacidad visual -->
-      <!-- ti=activa la libreria de iconos tabler, ti-brand-youtube es el icono de youtube, ti-brand-discord etc son los iconos -->
-      <a href="*" aria-label="YouTube"><i class="ti ti-brand-youtube"></i></a>
-      <a href="*" aria-label="Discord"><i class="ti ti-brand-discord"></i></a>
-      <a href="*" aria-label="Twitter"><i class="ti ti-brand-twitter"></i></a>
-      <a href="*" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
-    </div>
-  </nav>
+  <!-- llamamos al navbar-->
+  <div id="navbar"></div>
 
   <!-- Banner principal -->
   <div class="hero">
@@ -247,40 +220,11 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-brand">
-      <a href="*" class="logo" style="font-size:20px">RESPAWN<span> STORE</span></a>
-      <p>Tu tienda gaming de confianza en Perú. Consolas, juegos y accesorios al mejor precio con garantía oficial.</p>
-    </div>
-    <div>
-      <div class="footer-title">Productos</div>
-      <a href="*">PlayStation</a>
-      <a href="*">Xbox</a>
-      <a href="*">Nintendo</a>
-      <a href="*">Accesorios</a>
-      <a href="*">Juegos</a>
-    </div>
-    <div>
-      <div class="footer-title">Comunidad</div>
-      <a href="*">Discord</a>
-      <a href="*">YouTube</a>
-      <a href="*">Torneos</a>
-      <a href="*">Blog</a>
-    </div>
-    <div>
-      <div class="footer-title">Soporte</div>
-      <a href="*">Centro de ayuda</a>
-      <a href="*">Garantías</a>
-      <a href="*">Envíos</a>
-      <a href="*">Devoluciones</a>
-      <a href="*">Contacto</a>
-    </div>
-  </footer>
-  <!-- borde inferior del footer -->
-  <div class="footer-copy">© 2026 Respawn Store · Todos los derechos reservados · Lima, Perú</div>
-  <!-- ejecuta el script de la pagina -->
-  <script src="script.js"></script>
+  <!-- llamamos al footer-->
+  <div id="site-footer"></div>
+
+  <script src="../components/components.js"></script>
+  <script src="../script/index.js"></script>
 
 </body>
 </html>

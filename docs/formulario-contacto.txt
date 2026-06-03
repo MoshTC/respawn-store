@@ -1,0 +1,76 @@
+Formulario de Contacto
+
+paginas/formulario-contacto.html
+Formulario de Contacto
+
+paginas/ayuda.html
+Centro de Ayuda
+
+paginas/preguntas-frecuentes.html
+Preguntas Frecuentes
+
+
+--- CONTENIDO ---
+
+Completa el formulario a continuación y nuestro equipo de soporte se
+pondrá en contacto contigo lo antes posible.
+
+
+FORMULARIO DE CONTACTO
+
+Nombre completo
+Apellido
+Correo electrónico
+Teléfono
+Asunto:
+  - Consulta sobre mi pedido
+  - Problema con un producto
+  - Devolución o cambio
+  - Consulta sobre pagos
+  - Otro
+Número de pedido (opcional)
+Mensaje (máx. 500 caracteres)
+Adjuntar archivo (opcional) — PNG, JPG, PDF, máx. 10 MB
+
+
+OTROS CANALES
+
+Teléfono
++51 900 000 000
+Lun – Jue: 9:00 – 18:00
+Sábado: 10:00 – 14:00
+Domingo: Cerrado
+
+Chat en vivo
+Un agente disponible te responde en menos de 5 minutos.
+
+Email directo
+soporte@respawnstore.com
+Te respondemos en menos de 24 horas hábiles.
+
+¿Sabías que...?
+El 80% de nuestras consultas se resuelven directamente en las Preguntas
+Frecuentes. ¡Pruébalo antes de escribirnos!
+
+
+POLÍTICA DE PRIVACIDAD
+
+En Respawn Store valoramos tu privacidad. Esta política explica qué datos
+recopilamos cuando usas este formulario y cómo los utilizamos, de acuerdo
+con la Ley N°29733 de Protección de Datos Personales del Perú.
+
+¿Qué datos recopilamos?
+Al enviar este formulario, recopilamos tu nombre, correo electrónico, teléfono,
+número de pedido (si lo proporcionas) y el contenido de tu mensaje.
+
+¿Para qué los usamos?
+Usamos tu información únicamente para responder tu consulta y darle seguimiento.
+No la usamos para publicidad ni la compartimos con terceros.
+
+¿Por cuánto tiempo los guardamos?
+Conservamos tus datos por un máximo de 12 meses desde tu última interacción.
+
+¿Cuáles son tus derechos?
+Puedes solicitar acceso, corrección o eliminación de tus datos en cualquier
+momento. Escríbenos a soporte@respawnstore.com con el asunto "Datos personales"
+y te respondemos en 48 horas hábiles.

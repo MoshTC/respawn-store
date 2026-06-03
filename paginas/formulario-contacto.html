@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- codificación de caracteres: permite tildes, ñ y símbolos especiales -->
+    <meta charset="UTF-8" />
+    <!-- hace que la página se adapte a cualquier tamaño de pantalla -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto — Respawn Store</title>
+
+    <!-- pre-conexión a Google Fonts para cargar más rápido -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- fuentes del proyecto-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- librería de iconos Tabler — se usan con <i class="ti ti-nombre"> -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"
+    />
+    <!-- estilos globales del proyecto (colores, navbar, footer, botones) -->
+    <link rel="stylesheet" href="../css/base.css" />
+    <!-- ayuda.css contiene page-hero (base del hero compartida con las 3 páginas) -->
+    <link rel="stylesheet" href="../css/ayuda.css" />
+    <!-- estilos propios de esta página: formulario, sidebar, dropzone -->
+    <link rel="stylesheet" href="../css/contacto.css" />
+  </head>
+  <body>
+
+    <!-- navbar inyectado por components.js al cargar la página -->
+    <div id="navbar"></div>
+
+    <!-- HERO con breadcrumb: muestra la ruta Inicio > Centro de Ayuda > página actual
+         Usa solo page-hero, mismo estilo que preguntas-frecuentes -->
+    <div class="page-hero">
+      <nav class="breadcrumb">
+        <a href="../index/index.html">Inicio</a>
+        <span>/</span>
+        <a href="ayuda.html">Centro de Ayuda</a>
+        <span>/</span>
+        <span class="breadcrumb-actual">Soporte</span>
+      </nav>
+      <h1>Soporte</h1>
+      <p>
+        Completa el formulario a continuación y nuestro equipo de soporte se
+        pondrá en contacto contigo lo antes posible.
+      </p>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL
+         Grid de 2 columnas: formulario (izquierda) + sidebar (derecha).
+         El layout está definido en contacto.css (.contacto-layout). -->
+    <section class="contacto-layout">
+
+      <!-- COLUMNA IZQUIERDA: FORMULARIO -->
+      <div class="contacto-form-wrap">
+        <h2 class="contacto-titulo">Formulario de Contacto</h2>
+
+        <form class="contacto-form">
+
+          <!-- fila con 2 campos: nombre y apellido en columnas iguales -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nombre">NOMBRE</label>
+              <input type="text" id="nombre" placeholder="ej. Sergio" />
+            </div>
+            <div class="form-group">
+              <label for="apellido">APELLIDO</label>
+              <input type="text" id="apellido" placeholder="ej. Rocca" />
+            </div>
+          </div>
+
+          <!-- campo email — type="email" valida el formato automáticamente -->
+          <div class="form-group">
+            <label for="email">CORREO ELECTRÓNICO</label>
+            <input type="email" id="email" placeholder="Sergio@ejemplo.com" />
+          </div>
+
+          <!-- campo teléfono — type="tel" abre teclado numérico en móvil -->
+          <div class="form-group">
+            <label for="telefono">TELÉFONO</label>
+            <input type="tel" id="telefono" placeholder="+51 9xx xxx xxx" />
+          </div>
+
+          <!-- select de asunto — el value="" del primer option evita que se envíe vacío -->
+          <div class="form-group">
+            <label for="asunto">ASUNTO</label>
+            <select id="asunto">
+              <option value="">Seleccione un tema</option>
+              <option>Consulta sobre mi pedido</option>
+              <option>Problema con un producto</option>
+              <option>Devolución o cambio</option>
+              <option>Consulta sobre pagos</option>
+              <option>Otro</option>
+            </select>
+          </div>
+
+          <!-- campo opcional: form-opcional aplica estilo diferente al texto "(opcional)" -->
+          <div class="form-group">
+            <label for="pedido">NÚMERO DE PEDIDO <span class="form-opcional">(opcional)</span></label>
+            <input type="text" id="pedido" placeholder="ej. RS-2026-00123" />
+          </div>
+
+          <!-- textarea con contador de caracteres
+               maxlength="500" limita los caracteres en el HTML
+               contacto.js actualiza el contador en tiempo real -->
+          <div class="form-group">
+            <label for="mensaje">MENSAJE</label>
+            <textarea id="mensaje" rows="6" maxlength="500" placeholder="Describe tu problema con el mayor detalle posible..."></textarea>
+            <!-- contador actualizado por contacto.js -->
+            <div class="form-contador"><span id="contador">0</span> / 500</div>
+          </div>
+
+          <!-- dropzone de archivo
+               El input[type=file] real es invisible y cubre toda el área.
+               Al hacer clic en cualquier parte del dropzone se abre el selector. -->
+          <div class="form-group">
+            <label>ADJUNTAR ARCHIVO <span class="form-opcional">(opcional)</span></label>
+            <div class="form-dropzone">
+              <i class="ti ti-paperclip"></i>
+              <div class="dropzone-texto">Arrastra archivos aquí</div>
+              <div class="dropzone-sub">o haz clic · PNG, JPG, PDF – máx. 10 MB</div>
+              <!-- input invisible que cubre el dropzone para capturar el clic -->
+              <input type="file" accept=".png,.jpg,.pdf" />
+            </div>
+          </div>
+
+          <!-- botón de envío ocupa todo el ancho del formulario -->
+          <button type="submit" class="btn-primary contacto-btn">Enviar mensaje</button>
+          <p class="contacto-legal">Al enviar aceptas nuestra <a href="#" id="link-privacidad">Política de Privacidad</a></p>
+
+        </form>
+      </div>
+
+      <!-- COLUMNA DERECHA: SIDEBAR DE CONTACTO
+           4 tarjetas apiladas: teléfono, chat, email y tip -->
+      <aside class="contacto-sidebar">
+
+        <!-- tarjeta teléfono con tabla de horarios -->
+        <div class="sidebar-card">
+          <div class="sidebar-card-titulo">OTROS CANALES</div>
+          <div class="sidebar-canal">
+            <i class="ti ti-phone"></i>
+            <div>
+              <div class="sidebar-canal-nombre">Teléfono</div>
+              <div class="sidebar-canal-detalle">+51 900 000 000</div>
+              <!-- tabla de horarios: día izquierda, hora derecha -->
+              <table class="sidebar-horario">
+                <tr><td>Lun – Vie</td><td>9:00 – 18:00</td></tr>
+                <tr><td>Sábado</td><td>10:00 – 14:00</td></tr>
+                <!-- clase "cerrado" aplica color rojo -->
+                <tr><td>Domingo</td><td class="cerrado">Cerrado</td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- tarjeta chat en vivo con indicador de estado online -->
+        <div class="sidebar-card">
+          <div class="sidebar-canal">
+            <i class="ti ti-message"></i>
+            <div>
+              <div class="sidebar-canal-nombre">
+                Chat en vivo
+                <!-- punto verde + texto "En línea" -->
+                <span class="sidebar-online"><span class="online-dot"></span> En línea</span>
+              </div>
+              <div class="sidebar-canal-detalle">Un agente disponible te responde en menos de 5 minutos.</div>
+              <button class="btn-primary sidebar-btn">Iniciar chat</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- tarjeta email directo -->
+        <div class="sidebar-card">
+          <div class="sidebar-canal">
+            <i class="ti ti-mail"></i>
+            <div>
+              <div class="sidebar-canal-nombre">Email directo</div>
+              <div class="sidebar-canal-detalle">soporte@respawnstore.com</div>
+              <div class="sidebar-canal-detalle">Te respondemos en menos de 24 horas hábiles.</div>
+              <!-- onclick copia el correo al portapapeles -->
+              <a href="#" class="sidebar-link" onclick="navigator.clipboard.writeText('soporte@respawnstore.com'); this.textContent='¡Copiado!'; setTimeout(()=>this.textContent='Copiar correo →',2000); return false;">Copiar correo →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- tarjeta tip: fondo azul sutil, sugiere ver FAQ antes de escribir -->
+        <div class="sidebar-card sidebar-tip">
+          <div class="sidebar-canal">
+            <i class="ti ti-bulb"></i>
+            <div>
+              <div class="sidebar-canal-nombre">¿Sabías que...?</div>
+              <div class="sidebar-canal-detalle">El 80% de nuestras consultas se resuelven directamente en las Preguntas Frecuentes. ¡Pruébalo antes de escribirnos!</div>
+              <a href="preguntas-frecuentes.html" class="sidebar-link">Ver Preguntas Frecuentes →</a>
+            </div>
+          </div>
+        </div>
+
+      </aside>
+
+    </section>
+
+    <!-- MODAL POLÍTICA DE PRIVACIDAD
+         role="dialog" y aria-modal="true" para accesibilidad.
+         Se abre al hacer clic en el link del formulario.
+         Se cierra con el botón X, tecla Escape o clic fuera del modal. -->
+    <div id="modal-privacidad" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-titulo" aria-hidden="true">
+      <div class="modal-contenido">
+
+        <button class="modal-cerrar" aria-label="Cerrar política de privacidad">&times;</button>
+
+        <h2 id="modal-titulo">Política de Privacidad</h2>
+        <div class="modal-body">
+
+          <p>En Respawn Store valoramos tu privacidad. Esta política explica qué datos recopilamos cuando usas este formulario y cómo los utilizamos, de acuerdo con la <strong>Ley N°29733 de Protección de Datos Personales del Perú</strong>.</p>
+
+          <h3>¿Qué datos recopilamos?</h3>
+          <p>Al enviar este formulario, recopilamos tu nombre, correo electrónico, teléfono, número de pedido (si lo proporcionas) y el contenido de tu mensaje.</p>
+
+          <h3>¿Para qué los usamos?</h3>
+          <p>Usamos tu información únicamente para responder tu consulta y darle seguimiento. No la usamos para publicidad ni la compartimos con terceros.</p>
+
+          <h3>¿Por cuánto tiempo los guardamos?</h3>
+          <p>Conservamos tus datos por un máximo de 12 meses desde tu última interacción con nosotros.</p>
+
+          <h3>¿Cuáles son tus derechos?</h3>
+          <p>Puedes solicitar acceso, corrección o eliminación de tus datos en cualquier momento. Escríbenos a <strong>soporte@respawnstore.com</strong> con el asunto "Datos personales" y te respondemos en 48 horas hábiles.</p>
+
+        </div>
+        <button class="btn-primary modal-aceptar">Entendido</button>
+
+      </div>
+    </div>
+
+    <!-- footer inyectado por components.js -->
+    <div id="site-footer"></div>
+
+    <!-- components.js inyecta navbar y footer -->
+    <script src="../components/components.js"></script>
+    <!-- contacto.js maneja el contador de caracteres del textarea -->
+    <script src="../script/contacto.js"></script>
+  </body>
+</html>
