@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <!-- hace que la pagina se adapte a cualquier dispositivo y tamapño de pantalla -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RespawnStore</title>
+  <!-- descargando la font usada en la pagina desde google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- descagar la libreria de iconos tabler icons desde jsdelivr -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+  <!-- llama al esilo de la pagina -->
+  <link rel="stylesheet" href="../css/base.css"> 
+</head>
+<body>
+
+  <!-- Barra de navegacion -->
+  <nav>
+    <!-- logo de la pagina -->
+    <a href="*">
+    <img src="../imagenes/logoresblue.png" alt="Respawn Store" height="40">
+    </a>
+    <!-- class donde estan las opciones de navegacion -->
+     <!-- lista desordenada -->
+    <ul class="nav-links">
+      <li><a href="*">Inicio</a></li>
+      <li><a href="*">Productos</a></li>
+      <li><a href="*">Comunidad</a></li>
+      <li><a href="*">Ayuda</a></li>
+    </ul>
+    <!-- el buscador -->
+    <div class="search-box">
+      <i class="ti ti-search" aria-hidden="true"></i>
+      <input type="text" placeholder="Buscar consolas accesorios...">
+    </div>
+
+    <div class="socials">
+      <!-- aria-label hace que la pagina sea mas accesibles para personas con discapacidad visual -->
+      <!-- ti=activa la libreria de iconos tabler, ti-brand-youtube es el icono de youtube, ti-brand-discord etc son los iconos -->
+      <a href="*" aria-label="YouTube"><i class="ti ti-brand-youtube"></i></a>
+      <a href="*" aria-label="Discord"><i class="ti ti-brand-discord"></i></a>
+      <a href="*" aria-label="Twitter"><i class="ti ti-brand-twitter"></i></a>
+      <a href="*" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+    </div>
+  </nav>
+
+  <!-- Banner principal -->
+  <div class="hero">
+    <!-- efectos visuales de fondo del banner -->
+    <div class="hero-bg"></div>
+    
+    <div class="hero-content">
+      <span class="hero-tag">Nueva temporada 2026</span>
+      <h1>Juega en<br><span>otro nivel</span></h1>
+      <p>Las mejores consolas y accesorios gaming con envío a todo el Perú. Garantía oficial en cada compra.</p>
+      <div class="hero-btns">
+        <button class="btn-primary">Ver productos</button>
+        <button class="btn-ghost">Ver ofertas</button>
+      </div>
+    </div>
+    <div class="hero-decoration">
+     <img src="../imagenes/JUEGA SIN LIMITES.jpg" alt="decoración hero" 
+    style="width: 100%; height: 100%; object-fit: cover; object-position: center center;" >
+    </div>
+  </div>
+
+  <!-- barra de beneficios -->
+  <div class="benefits">
+    <div class="benefit">
+      <i class="ti ti-shield-check" aria-hidden="true"></i>
+      <div>
+        <div class="benefit-title">Compra segura</div>
+        <div class="benefit-sub">Protección en cada compra</div>
+      </div>
+    </div>
+    <div class="benefit">
+      <i class="ti ti-truck" aria-hidden="true"></i>
+      <div>
+        <div class="benefit-title">Envío rápido</div>
+        <div class="benefit-sub">A todo el país</div>
+      </div>
+    </div>
+    <div class="benefit">
+      <i class="ti ti-award" aria-hidden="true"></i>
+      <div>
+        <div class="benefit-title">Garantía oficial</div>
+        <div class="benefit-sub">Consolas 100% originales</div>
+      </div>
+    </div>
+    <div class="benefit">
+      <i class="ti ti-headset" aria-hidden="true"></i>
+      <div>
+        <div class="benefit-title">Soporte 24/7</div>
+        <div class="benefit-sub">Estamos para ayudarte</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- seccion de productos-->
+  <section>
+    <div class="filter-row">
+      <!-- botones de arriba -->
+      <div class="pills">
+        <button class="pill active">Todas</button>
+        <button class="pill">PlayStation</button>
+        <button class="pill">Xbox</button>
+        <button class="pill">Nintendo</button>
+        <button class="pill">Consolas Portátiles</button>
+      </div>
+      <!-- barra de seleccion de orden -->
+      <select class="sort-select">
+        <option>Ordenar por</option>
+        <option>Precio: menor a mayor</option>
+        <option>Precio: mayor a menor</option>
+        <option>Más popular</option>
+        <option>Más reciente</option>
+      </select>
+    </div>
+    <!-- tarjetas de productos -->
+    <div class="products">
+      <div class="product-card">
+        <div class="card-img">
+          <span class="card-badge">NUEVO</span>
+          <img src="../imagenes/ps5.png" alt="PlayStation 5"
+          style="width: 100%; height: 100%; object-fit: contain; object-position: center center;">
+        </div>
+        <div class="card-body">
+          <div class="card-name">PlayStation 5</div>
+          <div class="card-cat">Sony · Consola</div>
+          <div class="card-footer">
+            <span class="price">S/.2,499</span>
+            <button class="btn-detail">Ver detalles</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="card-img">
+          <img src="../imagenes/xboxs.png"alt="Xbox Series X"
+          style="width: 100%; height: 100%; object-fit: contain; object-position: center center;">
+        </div>
+        <div class="card-body">
+          <div class="card-name">Xbox Series X</div>
+          <div class="card-cat">Microsoft · Consola</div>
+          <div class="card-footer">
+            <span class="price">S/.2,299</span>
+            <button class="btn-detail">Ver detalles</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="card-img">
+          <span class="card-badge sale">OFERTA</span>
+          <img src="../imagenes/switch2.png" alt="Nintendo Switch 2"
+          style="width: 100%; height: 100%; object-fit: contain; object-position: center center;">
+        </div>
+        <div class="card-body">
+          <div class="card-name">Nintendo Switch 2</div>
+          <div class="card-cat">Nintendo · Portátil</div>
+          <div class="card-footer">
+            <span class="price">S/.1,699</span>
+            <button class="btn-detail">Ver detalles</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="card-img">
+          <img src="../imagenes/steamdeck.png" alt="Steam Deck"
+          style="width: 100%; height: 100%; object-fit: contain; object-position: center center;">
+        </div>
+        <div class="card-body">
+          <div class="card-name">DualSense Edge</div>
+          <div class="card-cat">Sony · Accesorio</div>
+          <div class="card-footer">
+            <span class="price">S/.4,399</span>
+            <button class="btn-detail">Ver detalles</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- seccion de promo -->
+  <div class="promo-wrap">
+    <div class="promo">
+      <div>
+        <div class="promo-tag">Nuevos accesorios</div>
+        <h2>Descubre los<br><span>nuevos</span><br>accesorios</h2>
+        <div class="promo-sub">disfruta de las nuevas experiencias</div>
+        <p>con los ultimos accesorios de esta generación</p>
+        <div class="promo-btns">
+          <button class="btn-ghost">Más información</button>
+          <button class="btn-primary">Comprar ahora</button>
+        </div>
+      </div>
+      <div class="promo-img">
+        <img src="../imagenes/promos.jpg" alt="Accesorios gaming" style="width: 100%; height: 100%; object-fit: cover; object-position: center center;">
+      </div>
+    </div>
+  </div>
+
+  <!-- LO MÁS JUGADO -->
+  <section style="padding-top: 0">
+    <div class="section-title">Lo más jugado</div>
+    <div class="section-sub">Juega sin límites</div>
+    <div class="games">
+      <div class="game-card">
+        <div class="game-img">
+          <img src="../imagenes/godOfwarR.jpg"alt="god of war ragnarok" style="width: 100%; height: 100%; object-fit: cover; object-position: center center;">
+        </div>
+        <div class="game-name">God of War Ragnarök</div>
+        <div class="game-plat">PlayStation 5</div>
+      </div>
+      <div class="game-card">
+        <div class="game-img">
+          <img src="../imagenes/HaloINf.jpg" alt="Halo Infinite" style="width: 100%; height: 100%; object-fit: cover; object-position: center center;">
+        </div>
+        <div class="game-name">Halo Infinite</div>
+        <div class="game-plat">Xbox Series X</div>
+      </div>
+      <div class="game-card">
+        <div class="game-img">
+          <img src="../imagenes/zelda.jpg" alt="Zelda: Tears of the Kingdom" style="width: 100%; height: 100%; object-fit: cover; object-position: center center;">
+        </div>
+        <div class="game-name">Zelda: Tears of the Kingdom</div>
+        <div class="game-plat">Nintendo Switch</div>
+      </div>
+      <div class="game-card">
+        <div class="game-img">
+         <img src="../imagenes/spiderman2.jpg" alt="Spider-Man 2" style="width: 100%; height: 100%; object-fit: cover; object-position: center center;">
+        </div>
+        <div class="game-name">Spider-Man 2</div>
+        <div class="game-plat">PlayStation 5</div>
+      </div>
+    </div>
+
+    <!-- BANNER INFERIOR -->
+    <div class="banner">
+      <div class="banner-glow"></div>
+      <div class="banner-content">
+        <h3>¿Listo para el siguiente nivel?</h3>
+        <p>Suscríbete y recibe ofertas exclusivas antes que nadie</p>
+        <button class="btn-primary">Suscribirme ahora</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-brand">
+      <a href="*" class="logo" style="font-size:20px">RESPAWN<span> STORE</span></a>
+      <p>Tu tienda gaming de confianza en Perú. Consolas, juegos y accesorios al mejor precio con garantía oficial.</p>
+    </div>
+    <div>
+      <div class="footer-title">Productos</div>
+      <a href="*">PlayStation</a>
+      <a href="*">Xbox</a>
+      <a href="*">Nintendo</a>
+      <a href="*">Accesorios</a>
+      <a href="*">Juegos</a>
+    </div>
+    <div>
+      <div class="footer-title">Comunidad</div>
+      <a href="*">Discord</a>
+      <a href="*">YouTube</a>
+      <a href="*">Torneos</a>
+      <a href="*">Blog</a>
+    </div>
+    <div>
+      <div class="footer-title">Soporte</div>
+      <a href="*">Centro de ayuda</a>
+      <a href="*">Garantías</a>
+      <a href="*">Envíos</a>
+      <a href="*">Devoluciones</a>
+      <a href="*">Contacto</a>
+    </div>
+  </footer>
+  <!-- borde inferior del footer -->
+  <div class="footer-copy">© 2026 Respawn Store · Todos los derechos reservados · Lima, Perú</div>
+  <!-- ejecuta el script de la pagina -->
+  <script src="script.js"></script>
+
+</body>
+</html>
