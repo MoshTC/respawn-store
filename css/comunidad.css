@@ -1,0 +1,87 @@
+.comunidad-banner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.titulo-comunidad {
+  padding: 10px;
+  margin: 20px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 37px;
+  letter-spacing: 1px;
+}
+.comunidad-contenedor {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  width: 330px;
+  height: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding: 7px;
+  gap: 15px;
+}
+.comunidad-contenedor:hover,
+.article:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+.comunidad-cards {
+  display: flex;
+  gap: 90px;
+  justify-content: center;
+}
+.ti-file-description {
+  font-size: 70px;
+  align-items: center;
+}
+.ti-dual-screen {
+  font-size: 70px;
+  align-items: center;
+}
+
+.img-articulos {
+  width: 100%;
+  height: 200px; /* 👈 mitad del div */
+  object-fit: cover; /* para que no se deforme */
+  display: block;
+}
+.article {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  width: 470px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  overflow: hidden; /* importante */
+
+  padding: 7px;
+  gap: 15px;
+}
+.article h2 {
+  font-size: 20px;
+  flex-grow: 1;
+}
+.article a {
+  font-size: 20px;
+  color: var(--cyan);
+}
+
+.article a:hover {
+  color: var(--dim);
+}
+.contenedor-articulos {
+  display: flex;
+  gap: 90px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 120px;
+}
