@@ -3,10 +3,10 @@
    Se inyecta dinámicamente para que todas las páginas
    que carguen components.js lo hereden automáticamente.
    ============================================= */
-const favicon = document.createElement('link');
-favicon.rel  = 'icon';
-favicon.type = 'image/png';
-favicon.href = '../imagenes/logoresblue.png';
+const favicon = document.createElement("link");
+favicon.rel = "icon";
+favicon.type = "image/png";
+favicon.href = "../imagenes/logoresblue.png";
 document.head.appendChild(favicon);
 
 /* =============================================
@@ -20,31 +20,46 @@ document.head.appendChild(favicon);
    ============================================= */
 const paginas = [
   {
-    label: 'Inicio',
-    href: '../paginas/inicio.html'
+    label: "Inicio",
+    href: "../paginas/inicio.html",
   },
   {
-    label: 'Productos',
-    href: '#'
+    label: "Productos",
+    href: "#",
+    dropdown: [
+      {
+        label: "Gift Cards",
+        icon: "ti-gift",
+        href: "../paginas/giftcards.html",
+      },
+    ],
   },
   {
-    label: 'Comunidad',
-    href: '../paginas/comunidad.html',
+    label: "Comunidad",
+    href: "../paginas/comunidad.html",
     dropdown: [
       /* cada item del dropdown: label, icono Tabler y href */
-      { label: 'Blog',             icon: 'ti ti-file-description', href: '#' },
-      { label: 'Consejos y guias', icon: 'ti ti-dual-screen',     href: '#' }
-    ]
+      { label: "Blog", icon: "ti ti-file-description", href: "#" },
+      { label: "Consejos y guias", icon: "ti ti-dual-screen", href: "#" },
+    ],
   },
   {
-    label: 'Ayuda',
-    href: '../paginas/ayuda.html',
+    label: "Ayuda",
+    href: "../paginas/ayuda.html",
     dropdown: [
       /* cada item del dropdown: label, icono Tabler y href */
-      { label: 'Preguntas frecuentes',   icon: 'ti-help-circle', href: '../paginas/preguntas-frecuentes.html' },
-      { label: 'Formulario de contacto', icon: 'ti-mail',        href: '../paginas/formulario-contacto.html' }
-    ]
-  }
+      {
+        label: "Preguntas frecuentes",
+        icon: "ti-help-circle",
+        href: "../paginas/preguntas-frecuentes.html",
+      },
+      {
+        label: "Formulario de contacto",
+        icon: "ti-mail",
+        href: "../paginas/formulario-contacto.html",
+      },
+    ],
+  },
 ];
 
 /* =============================================
@@ -55,24 +70,30 @@ const paginas = [
    Inyecta el HTML en <div id="navbar">.
    ============================================= */
 function buildNav() {
-  const links = paginas.map(p => {
-    if (p.dropdown) {
-      /* construye los links internos del dropdown */
-      const items = p.dropdown.map(d => `
+  const links = paginas
+    .map((p) => {
+      if (p.dropdown) {
+        /* construye los links internos del dropdown */
+        const items = p.dropdown
+          .map(
+            (d) => `
         <a href="${d.href}"><i class="ti ${d.icon}"></i> ${d.label}</a>
-      `).join('');
-      /* li con clase nav-item-dropdown activa el CSS del menú desplegable */
-      return `
+      `,
+          )
+          .join("");
+        /* li con clase nav-item-dropdown activa el CSS del menú desplegable */
+        return `
         <li class="nav-item-dropdown">
           <a href="${p.href}">${p.label} <i class="ti ti-chevron-down nav-arrow"></i></a>
           <div class="nav-dropdown">${items}</div>
         </li>`;
-    }
-    /* li simple sin dropdown */
-    return `<li><a href="${p.href}">${p.label}</a></li>`;
-  }).join('');
+      }
+      /* li simple sin dropdown */
+      return `<li><a href="${p.href}">${p.label}</a></li>`;
+    })
+    .join("");
 
-  document.getElementById('navbar').innerHTML = `
+  document.getElementById("navbar").innerHTML = `
     <nav>
       <!-- logo: link a la página principal -->
       <a href="../index/index.html">
@@ -102,7 +123,7 @@ function buildNav() {
    A diferencia del navbar, el footer es estático (no se genera desde un array).
    ============================================= */
 function buildFooter() {
-  document.getElementById('site-footer').innerHTML = `
+  document.getElementById("site-footer").innerHTML = `
     <footer>
       <!-- columna marca: logo + descripción -->
       <div class="footer-brand">
