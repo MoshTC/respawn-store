@@ -21,7 +21,7 @@ document.head.appendChild(favicon);
 const paginas = [
   {
     label: 'Inicio',
-    href: '../index/index.html'
+    href: '../paginas/inicio.html'
   },
   {
     label: 'Productos',
