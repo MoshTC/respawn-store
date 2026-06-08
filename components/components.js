@@ -29,7 +29,12 @@ const paginas = [
   },
   {
     label: 'Comunidad',
-    href: '#'
+    href: '../paginas/comunidad.html',
+    dropdown: [
+      /* cada item del dropdown: label, icono Tabler y href */
+      { label: 'Blog',             icon: 'ti ti-file-description', href: '#' },
+      { label: 'Consejos y guias', icon: 'ti ti-dual-screen',     href: '#' }
+    ]
   },
   {
     label: 'Ayuda',
