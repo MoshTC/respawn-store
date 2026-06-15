@@ -25,7 +25,7 @@ const paginas = [
   },
   {
     label: 'Productos',
-    href: '#'
+    href: '../paginas/productos.html',
   },
   {
     label: 'Comunidad',
