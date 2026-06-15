@@ -9,26 +9,35 @@
   border-bottom: 1px solid var(--border);
   padding: 0 2rem;
   background: var(--bg2);
+
+  /* en móvil los 6 tabs no caben en una fila: bajan de línea */
+  @media (max-width: 640px) {
+    flex-wrap: wrap;
+    padding: 0 1rem;
+  }
 }
 
 .faq-tab {
   background: none;
   border: none;
-  border-bottom: 2px solid transparent; /* línea invisible por defecto */
+  border-bottom: 2px solid transparent;
   color: var(--muted);
   font-size: 14px;
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   padding: 1rem 1.25rem;
   cursor: pointer;
-  transition: color .2s, border-color .2s;
-}
+  transition:
+    color 0.2s,
+    border-color 0.2s;
 
-.faq-tab:hover { color: var(--text); }
+  &:hover {
+    color: var(--text);
+  }
 
-/* tab activo: texto azul + línea azul abajo */
-.faq-tab.active {
-  color: var(--cyan);
-  border-bottom-color: var(--cyan);
+  &.active {
+    color: var(--cyan);
+    border-bottom-color: var(--cyan);
+  }
 }
 
 /* =============================================
@@ -40,24 +49,53 @@
   font-size: 11px;
   font-weight: 700;
   color: var(--muted);
-  letter-spacing: 1.5px;        /* espaciado entre letras para efecto de etiqueta */
+  letter-spacing: 1.5px; /* espaciado entre letras para efecto de etiqueta */
   background: var(--bg3);
   border: 1px solid var(--border);
-  padding: .75rem 1.25rem;
-  margin-bottom: .5rem;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 0.5rem;
 }
 
 /* =============================================
    ACORDEÓN DE PREGUNTAS
    Cada faq-item tiene un botón visible y una respuesta oculta.
    Al hacer clic se agrega la clase "open" y la respuesta se expande.
-   La animación usa max-height: 0 → max-height: 300px con transition.
+   La animación usa max-height: 0 → max-height: 600px con transition.
    ============================================= */
 .faq-item {
   border: 1px solid var(--border);
   border-radius: 8px;
-  margin-bottom: .5rem;
-  overflow: hidden;              /* oculta la respuesta que desborda */
+  margin-bottom: 0.5rem;
+  overflow: hidden; /* oculta la respuesta que desborda */
+  scroll-margin-top: 72px; /* ídem .faq-seccion: respiro bajo la navbar sticky */
+
+  /* estados del item abierto: pregunta azul, flecha girada, respuesta visible */
+  &.open {
+    .faq-pregunta {
+      color: var(--cyan);
+
+      /* flecha rota 180° */
+      i {
+        transform: rotate(180deg);
+      }
+    }
+
+    .faq-respuesta {
+      max-height: 600px;
+    }
+  }
+}
+
+.faq-seccion {
+  /* las secciones son <div>, no <section>: no heredan el padding
+     de base.css; esto las alinea con los tabs (0 2rem) */
+  padding: 1rem 2rem 0;
+
+  scroll-margin-top: 72px;
+
+  @media (max-width: 640px) {
+    padding: 1rem 1rem 0; 
+  }
 }
 
 .faq-pregunta {
@@ -66,7 +104,7 @@
   border: none;
   color: var(--text);
   font-size: 14px;
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-weight: 500;
   padding: 1rem 1.25rem;
   display: flex;
@@ -74,42 +112,27 @@
   align-items: center;
   cursor: pointer;
   text-align: left;
-  transition: color .2s;
-}
+  transition: color 0.2s;
 
-.faq-pregunta i {
-  transition: transform .25s;
-  flex-shrink: 0;                /* la flecha no se encoge */
-}
-
-/* cuando el item está abierto: pregunta en azul */
-.faq-item.open .faq-pregunta {
-  color: var(--cyan);
-}
-
-/* cuando el item está abierto: flecha rota 180° */
-.faq-item.open .faq-pregunta i {
-  transform: rotate(180deg);
+  i {
+    transition: transform 0.25s;
+    flex-shrink: 0; /* la flecha no se encoge */
+  }
 }
 
 /* respuesta oculta por defecto con altura 0 */
 .faq-respuesta {
   max-height: 0;
   overflow: hidden;
-  transition: max-height .3s ease; /* animación suave al abrir */
-}
+  transition: max-height 0.3s ease; /* animación suave al abrir */
 
-/* cuando el item está abierto: se expande hasta 300px */
-.faq-item.open .faq-respuesta {
-  max-height: 300px;
-}
-
-.faq-respuesta p {
-  padding: 1rem 1.25rem;
-  font-size: 13px;
-  color: var(--muted);
-  line-height: 1.7;
-  border-top: 1px solid var(--border); /* línea separadora entre pregunta y respuesta */
+  p {
+    padding: 1rem 1.25rem;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+    border-top: 1px solid var(--border); /* línea separadora entre pregunta y respuesta */
+  }
 }
 
 /* =============================================

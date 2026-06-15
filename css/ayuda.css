@@ -9,20 +9,38 @@
   /* degradado oscuro de fondo */
   background: linear-gradient(135deg, #0d0d1a 0%, #12122a 50%, #0a0a1e 100%);
   border-bottom: 1px solid var(--border);
-}
 
-.page-hero h1 {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 48px;
-  font-weight: 800;
-  color: #fff;
-  text-transform: uppercase;
-  margin-bottom: .5rem;
-}
+  h1 {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 48px;
+    font-weight: 800;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
 
-.page-hero p {
-  color: var(--muted);
-  font-size: 15px;
+  p {
+    color: var(--muted);
+    font-size: 15px;
+  }
+
+  /* el breadcrumb también es un <nav>, así que hereda de base.css
+     los estilos de la navbar (62px, fondo, sticky); aquí se anulan */
+  .breadcrumb {
+    height: auto;
+    padding: 0;
+    background: none;
+    border-bottom: none;
+    position: static;
+  }
+
+  @media (max-width: 640px) {
+    padding: 2rem 1rem;
+
+    h1 {
+      font-size: 36px;
+    }
+  }
 }
 
 /* =============================================
@@ -31,60 +49,56 @@
    Es más grande y centrado porque tiene el buscador debajo.
    ============================================= */
 .ayuda-hero {
-  padding: 4rem 2rem;    /* más espacio vertical que el resto */
-  text-align: center;    /* centra el título, subtítulo y buscador */
-}
+  padding: 4rem 2rem; /* más espacio vertical que el resto */
+  text-align: center; /* centra el título, subtítulo y buscador */
 
-.ayuda-hero h1 {
-  font-size: 52px;       /* más grande que las otras páginas */
-  margin-bottom: .75rem;
-}
+  h1 {
+    font-size: 52px; /* más grande que las otras páginas */
+    margin-bottom: 0.75rem;
+  }
 
-.ayuda-hero p {
-  margin-bottom: 2rem;   /* separa el subtítulo del buscador */
+  p {
+    margin-bottom: 2rem; /* separa el subtítulo del buscador */
+  }
+
+  @media (max-width: 640px) {
+    h1 {
+      font-size: 40px;
+    }
+  }
 }
 
 /* =============================================
    BUSCADOR DEL HERO
    Solo existe en ayuda.html.
-   Usa flexbox para alinear ícono + input + botón en fila.
+   Reutiliza .search-box de base.css (flex, fondo, borde, input
+   transparente, placeholder): aquí solo se ajusta lo que cambia,
+   la píldora grande y centrada con su botón.
    ============================================= */
 .ayuda-search {
-  display: flex;
-  align-items: center;
-  background: var(--bg4);
-  border: 1px solid var(--border2);
-  border-radius: 50px;           /* forma de píldora */
-  padding: 6px 6px 6px 18px;    /* más padding a la izquierda para el ícono */
-  max-width: 540px;
-  margin: 0 auto;                /* centra el buscador en la página */
+  border-radius: 50px; /* píldora más redonda que la de la navbar */
+  padding: 6px 6px 6px 18px; /* más padding a la izquierda para el ícono */
+  height: auto; /* anula los 36px fijos de la navbar */
   gap: 10px;
-}
+  max-width: 540px;
+  margin: 0 auto; /* centra el buscador en la página */
 
-.ayuda-search i {
-  font-size: 18px;
-  color: var(--dim);
-  flex-shrink: 0;                /* el ícono no se encoge si la pantalla es chica */
-}
+  i {
+    font-size: 18px; /* ícono más grande que en la navbar */
+    flex-shrink: 0; /* el ícono no se encoge si la pantalla es chica */
+  }
 
-.ayuda-search input {
-  flex: 1;                       /* ocupa todo el espacio entre el ícono y el botón */
-  background: none;
-  border: none;
-  outline: none;
-  color: var(--text);
-  font-size: 14px;
-  font-family: 'DM Sans', sans-serif;
-}
+  input {
+    flex: 1; /* ocupa todo el espacio entre el ícono y el botón */
+    width: auto; /* anula los 190px fijos de la navbar */
+    font-size: 14px;
+  }
 
-.ayuda-search input::placeholder {
-  color: var(--dim);
-}
-
-.ayuda-search .btn-primary {
-  border-radius: 50px;           /* redondea el botón para que coincida con la píldora */
-  padding: 9px 22px;
-  flex-shrink: 0;                /* el botón no se encoge */
+  .btn-primary {
+    border-radius: 50px; /* redondea el botón para que coincida con la píldora */
+    padding: 9px 22px;
+    flex-shrink: 0; /* el botón no se encoge */
+  }
 }
 
 /* =============================================
@@ -103,6 +117,14 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
   gap: 1rem;
+
+  @media (max-width: 960px) {
+    grid-template-columns: repeat(2, 1fr); /* de 3 columnas a 2 */
+  }
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr; /* una tarjeta por fila */
+  }
 }
 
 .ayuda-card {
@@ -114,19 +136,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: .6rem;
-  transition: border-color .2s, transform .2s;
-}
+  gap: 0.6rem;
+  transition:
+    border-color 0.2s,
+    transform 0.2s;
 
-/* efecto hover: borde azul y sube 3px */
-.ayuda-card:hover {
-  border-color: var(--cyan);
-  transform: translateY(-3px);
-}
+  /* efecto hover: borde azul y sube 3px */
+  &:hover {
+    border-color: var(--cyan);
+    transform: translateY(-3px);
+  }
 
-.ayuda-card > i {
-  font-size: 32px;
-  color: var(--cyan);
+  > i {
+    font-size: 32px;
+    color: var(--cyan);
+  }
 }
 
 .ayuda-card-nombre {
@@ -145,12 +169,12 @@
   font-size: 13px;
   color: var(--cyan);
   text-decoration: none;
-  margin-top: .5rem;
-  transition: opacity .2s;
-}
+  margin-top: 0.5rem;
+  transition: opacity 0.2s;
 
-.ayuda-card-link:hover {
-  opacity: .7;
+  &:hover {
+    opacity: 0.7;
+  }
 }
 
 /* =============================================
@@ -159,24 +183,24 @@
    padding-left crea el espacio para los bullets.
    ============================================= */
 .ayuda-lista {
-  padding-left: 1.5rem;  /* espacio para los bullets de la lista */
+  padding-left: 1.5rem; /* espacio para los bullets de la lista */
   display: flex;
   flex-direction: column;
-  gap: .75rem;
-}
+  gap: 0.75rem;
 
-.ayuda-lista li {
-  color: var(--muted);
-}
+  li {
+    color: var(--muted);
+  }
 
-.ayuda-lista a {
-  color: var(--cyan);
-  text-decoration: none;
-  font-size: 14px;
-}
+  a {
+    color: var(--cyan);
+    text-decoration: none;
+    font-size: 14px;
 
-.ayuda-lista a:hover {
-  text-decoration: underline;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 /* =============================================
@@ -186,28 +210,32 @@
    ============================================= */
 .ayuda-contacto {
   text-align: center;
-  background: var(--bg2);        /* fondo más oscuro para separar la sección */
-}
+  background: var(--bg2); /* fondo más oscuro para separar la sección */
 
-.ayuda-contacto h2 {
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: .5rem;
-}
+  h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
 
-/* el > selecciona solo el párrafo directo hijo, no los de las tarjetas */
-.ayuda-contacto > p {
-  color: var(--muted);
-  font-size: 14px;
-  margin-bottom: 1.5rem;
+  /* el > selecciona solo el párrafo directo hijo, no los de las tarjetas */
+  > p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 1.5rem;
+  }
 }
 
 .ayuda-contacto-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
-  text-align: left;              /* el texto dentro de las tarjetas va a la izquierda */
+  text-align: left; /* el texto dentro de las tarjetas va a la izquierda */
+
+  @media (max-width: 960px) {
+    grid-template-columns: 1fr; /* tarjetas de contacto apiladas */
+  }
 }
 
 .ayuda-contacto-card {
@@ -217,29 +245,29 @@
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: .6rem;
-}
+  gap: 0.6rem;
 
-.ayuda-contacto-card i {
-  font-size: 28px;
-  color: var(--cyan);
+  i {
+    font-size: 28px;
+    color: var(--cyan);
+  }
+
+  p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .btn-primary {
+    width: fit-content; /* el botón no ocupa todo el ancho */
+    margin-top: 0.5rem;
+  }
 }
 
 .ayuda-contacto-nombre {
   font-size: 15px;
   font-weight: 700;
   color: var(--text);
-}
-
-.ayuda-contacto-card p {
-  font-size: 13px;
-  color: var(--muted);
-  line-height: 1.6;
-}
-
-.ayuda-contacto-card .btn-primary {
-  width: fit-content;            /* el botón no ocupa todo el ancho */
-  margin-top: .5rem;
 }
 
 /* =============================================
@@ -255,16 +283,45 @@
   border-top: 1px solid var(--border);
   padding: 2rem;
   gap: 2rem;
+
+  h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.35rem;
+  }
+
+  p {
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  /* en móvil pasa de fila a columna: texto arriba, botón abajo */
+  @media (max-width: 640px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
 }
 
-.ayuda-banner h2 {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: .35rem;
-}
+/* =============================================
+   RESPONSIVE — COMPONENTES DE BASE.CSS
+   ============================================= */
+@media (max-width: 640px) {
+  /* la navbar deja de tener altura fija y permite que sus
+     elementos bajen de línea en vez de desbordar */
+  nav {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 0.6rem 1rem;
+    row-gap: 0.5rem;
+  }
 
-.ayuda-banner p {
-  font-size: 13px;
-  color: var(--muted);
+  nav .search-box input {
+    width: 120px;
+  }
+
+  footer {
+    grid-template-columns: 1fr 1fr;
+  }
 }

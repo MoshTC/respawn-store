@@ -1,13 +1,11 @@
 <!doctype html>
 <html lang="es">
   <head>
-    <!-- codificación de caracteres: permite tildes, ñ y símbolos especiales -->
     <meta charset="UTF-8" />
-    <!-- hace que la página se adapte a cualquier tamaño de pantalla -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ayuda — Respawn Store</title>
-    <!-- pre-conexión a Google Fonts para que las fuentes carguen más rápido -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- fuentes del proyecto -->
     <link
       href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap"
@@ -16,7 +14,7 @@
     <!-- librería de iconos Tabler, se usan con <i class="ti ti-nombre"> -->
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3/dist/tabler-icons.min.css"
     />
     <!-- estilos globales del proyecto: colores, navbar, footer, botones -->
     <link rel="stylesheet" href="../css/base.css" />
@@ -27,147 +25,193 @@
     <!-- navbar inyectado dinámicamente por components.js -->
     <div id="navbar"></div>
 
-    <!-- HERO
+    <!-- main: contenido principal de la página, landmark que permite a
+         lectores de pantalla saltar directo al contenido -->
+    <main>
+      <!-- HERO
          Usa page-hero (base compartida) + ayuda-hero
          porque esta página tiene un buscador debajo del título -->
-    <div class="page-hero ayuda-hero">
-      <h1>Centro de Ayuda</h1>
-      <p>
-        ¿Tienes alguna duda o inconveniente? Encuentra la respuesta que necesitas.
-      </p>
-      <!-- buscador: ícono + input + botón en fila usando flexbox
-           el input tiene flex:1 para ocupar todo el espacio disponible -->
-      <div class="ayuda-search">
-        <i class="ti ti-search"></i>
-        <input type="text" placeholder="Busca tu problema o pregunta..." />
-        <button class="btn-primary">Buscar</button>
+      <div class="page-hero ayuda-hero">
+        <h1>Centro de Ayuda</h1>
+        <p>
+          ¿Tienes alguna duda o inconveniente? Encuentra la respuesta que
+          necesitas.
+        </p>
+        <!-- buscador: reutiliza .search-box de la navbar (base.css);
+           ayuda-search solo lo agranda y lo centra -->
+        <div class="search-box ayuda-search">
+          <i class="ti ti-search"></i>
+          <input
+            type="text"
+            placeholder="Busca tu problema o pregunta..."
+            aria-label="Buscar en el centro de ayuda"
+          />
+          <button class="btn-primary">Buscar</button>
+        </div>
       </div>
-    </div>
 
-    <!-- CATEGORÍAS DE AYUDA RÁPIDA
+      <!-- CATEGORÍAS DE AYUDA RÁPIDA
          Grid de 6 tarjetas en 3 columnas definido en ayuda.css (.ayuda-grid)
          Cada tarjeta tiene: ícono Tabler, nombre, descripción y link -->
-    <section class="ayuda-categorias">
-      <h2 class="ayuda-categorias-titulo">Categorías de ayuda rápida</h2>
-      <div class="ayuda-grid">
+      <section class="ayuda-categorias">
+        <h2 class="ayuda-categorias-titulo">Categorías de ayuda rápida</h2>
+        <div class="ayuda-grid">
+          <div class="ayuda-card">
+            <i class="ti ti-package"></i>
+            <h3 class="ayuda-card-nombre">Mi Pedido</h3>
+            <p class="ayuda-card-desc">
+              Consulta el estado de tu compra, rastrea tu envío o reporta un
+              problema.
+            </p>
+            <a href="preguntas-frecuentes.html#pedidos" class="ayuda-card-link"
+              >Ver artículos →</a
+            >
+          </div>
 
-        <div class="ayuda-card">
-          <i class="ti ti-package"></i>
-          <div class="ayuda-card-nombre">Mi Pedido</div>
-          <p class="ayuda-card-desc">
-            Consulta el estado de tu compra, rastrea tu envío o reporta un problema.
-          </p>
-          <a href="preguntas-frecuentes.html#pedidos" class="ayuda-card-link">Ver artículos →</a>
+          <div class="ayuda-card">
+            <i class="ti ti-credit-card"></i>
+            <h3 class="ayuda-card-nombre">Pagos y Facturación</h3>
+            <p class="ayuda-card-desc">
+              Revisa tus métodos de pago, descarga tu comprobante o reporta un
+              cobro incorrecto.
+            </p>
+            <a href="preguntas-frecuentes.html#pagos" class="ayuda-card-link"
+              >Ver artículos →</a
+            >
+          </div>
+
+          <div class="ayuda-card">
+            <i class="ti ti-refresh"></i>
+            <h3 class="ayuda-card-nombre">Devoluciones</h3>
+            <p class="ayuda-card-desc">
+              Conoce los plazos y el proceso para devolver o cambiar un
+              producto.
+            </p>
+            <a href="preguntas-frecuentes.html#pedidos" class="ayuda-card-link"
+              >Ver artículos →</a
+            >
+          </div>
+
+          <div class="ayuda-card">
+            <i class="ti ti-truck"></i>
+            <h3 class="ayuda-card-nombre">Envío y entrega</h3>
+            <p class="ayuda-card-desc">
+              Información sobre plazos, costos y seguimiento de tu pedido.
+            </p>
+            <a href="preguntas-frecuentes.html#envios" class="ayuda-card-link"
+              >Ver artículos →</a
+            >
+          </div>
+
+          <div class="ayuda-card">
+            <i class="ti ti-user"></i>
+            <h3 class="ayuda-card-nombre">Mi Cuenta</h3>
+            <p class="ayuda-card-desc">
+              Actualiza tus datos personales, contraseña y preferencias de
+              cuenta.
+            </p>
+            <a href="preguntas-frecuentes.html#cuenta" class="ayuda-card-link"
+              >Ver artículos →</a
+            >
+          </div>
+
+          <div class="ayuda-card">
+            <i class="ti ti-settings"></i>
+            <h3 class="ayuda-card-nombre">Configuración</h3>
+            <p class="ayuda-card-desc">
+              Ajusta tus preferencias de notificaciones y privacidad.
+            </p>
+            <a href="preguntas-frecuentes.html#cuenta" class="ayuda-card-link"
+              >Ver artículos →</a
+            >
+          </div>
         </div>
+      </section>
 
-        <div class="ayuda-card">
-          <i class="ti ti-credit-card"></i>
-          <div class="ayuda-card-nombre">Pagos y Facturación</div>
-          <p class="ayuda-card-desc">
-            Revisa tus métodos de pago, descarga tu comprobante o reporta un cobro incorrecto.
-          </p>
-          <a href="preguntas-frecuentes.html#pagos" class="ayuda-card-link">Ver artículos →</a>
-        </div>
-
-        <div class="ayuda-card">
-          <i class="ti ti-refresh"></i>
-          <div class="ayuda-card-nombre">Devoluciones</div>
-          <p class="ayuda-card-desc">
-            Conoce los plazos y el proceso para devolver o cambiar un producto.
-          </p>
-          <a href="preguntas-frecuentes.html#pedidos" class="ayuda-card-link">Ver artículos →</a>
-        </div>
-
-        <div class="ayuda-card">
-          <i class="ti ti-truck"></i>
-          <div class="ayuda-card-nombre">Envío y entrega</div>
-          <p class="ayuda-card-desc">
-            Información sobre plazos, costos y seguimiento de tu pedido.
-          </p>
-          <a href="preguntas-frecuentes.html#envios" class="ayuda-card-link">Ver artículos →</a>
-        </div>
-
-        <div class="ayuda-card">
-          <i class="ti ti-user"></i>
-          <div class="ayuda-card-nombre">Mi Cuenta</div>
-          <p class="ayuda-card-desc">
-            Actualiza tus datos personales, contraseña y preferencias de cuenta.
-          </p>
-          <a href="preguntas-frecuentes.html#cuenta" class="ayuda-card-link">Ver artículos →</a>
-        </div>
-
-        <div class="ayuda-card">
-          <i class="ti ti-settings"></i>
-          <div class="ayuda-card-nombre">Configuración</div>
-          <p class="ayuda-card-desc">
-            Ajusta tus preferencias de notificaciones y privacidad.
-          </p>
-          <a href="preguntas-frecuentes.html#cuenta" class="ayuda-card-link">Ver artículos →</a>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ARTÍCULOS POPULARES
+      <!-- ARTÍCULOS POPULARES
          Lista de links a las preguntas más consultadas
          padding-left en ayuda-lista crea el espacio para los bullets -->
-    <section class="ayuda-articulos">
-      <h2 class="ayuda-categorias-titulo">Artículos Populares</h2>
-      <ul class="ayuda-lista">
-        <li><a href="preguntas-frecuentes.html#faq-rastrear">¿Cómo rastrear mi pedido?</a></li>
-        <li><a href="preguntas-frecuentes.html#faq-pago">¿Cuáles son los métodos de pago?</a></li>
-        <li><a href="preguntas-frecuentes.html#faq-devolucion">¿Cómo iniciar una devolución o cambio?</a></li>
-        <li><a href="preguntas-frecuentes.html#faq-envio">¿Cuánto tiempo tarda mi envío?</a></li>
-        <li><a href="preguntas-frecuentes.html#faq-contrasena">¿Cómo restablecer mi contraseña?</a></li>
-      </ul>
-    </section>
+      <section class="ayuda-articulos">
+        <h2 class="ayuda-categorias-titulo">Artículos Populares</h2>
+        <ul class="ayuda-lista">
+          <li>
+            <a href="preguntas-frecuentes.html#faq-rastrear"
+              >¿Cómo rastrear mi pedido?</a
+            >
+          </li>
+          <li>
+            <a href="preguntas-frecuentes.html#faq-pago"
+              >¿Cuáles son los métodos de pago?</a
+            >
+          </li>
+          <li>
+            <a href="preguntas-frecuentes.html#faq-devolucion"
+              >¿Cómo iniciar una devolución o cambio?</a
+            >
+          </li>
+          <li>
+            <a href="preguntas-frecuentes.html#faq-envio"
+              >¿Cuánto tiempo tarda mi envío?</a
+            >
+          </li>
+          <li>
+            <a href="preguntas-frecuentes.html#faq-contrasena"
+              >¿Cómo restablecer mi contraseña?</a
+            >
+          </li>
+        </ul>
+      </section>
 
-    <!-- CONTACTO
+      <!-- CONTACTO
          3 tarjetas de canales en grid de 3 columnas
          Fondo bg2 para distinguir visualmente esta sección -->
-    <section class="ayuda-contacto">
-      <h2>¿No encontraste lo que buscabas?</h2>
-      <p>
-        Contáctanos por el canal que prefieras y te ayudamos.
-      </p>
-      <div class="ayuda-contacto-grid">
+      <section class="ayuda-contacto">
+        <h2>¿No encontraste lo que buscabas?</h2>
+        <p>Contáctanos por el canal que prefieras y te ayudamos.</p>
+        <div class="ayuda-contacto-grid">
+          <div class="ayuda-contacto-card">
+            <i class="ti ti-message"></i>
+            <h3 class="ayuda-contacto-nombre">Chat en vivo</h3>
+            <p>Un agente disponible te responde en menos de 5 minutos.</p>
+            <button class="btn-primary">Iniciar chat</button>
+          </div>
 
-        <div class="ayuda-contacto-card">
-          <i class="ti ti-message"></i>
-          <div class="ayuda-contacto-nombre">Chat en vivo</div>
-          <p>Un agente disponible te responde en menos de 5 minutos.</p>
-          <button class="btn-primary">Iniciar chat</button>
+          <div class="ayuda-contacto-card">
+            <i class="ti ti-mail"></i>
+            <h3 class="ayuda-contacto-nombre">Correo electrónico</h3>
+            <p>Escríbenos y te respondemos en menos de 24 horas hábiles.</p>
+            <a href="formulario-contacto.html" class="btn-primary"
+              >Enviar correo</a
+            >
+          </div>
+
+          <div class="ayuda-contacto-card">
+            <i class="ti ti-phone"></i>
+            <h3 class="ayuda-contacto-nombre">Llámanos</h3>
+            <p>Lun - Vie: 9:00 AM - 6:00 PM</p>
+            <p>+51 900 000 000</p>
+            <!-- tel: abre el marcador en móvil -->
+            <a href="tel:+51900000000" class="btn-primary">Llamar ahora</a>
+          </div>
         </div>
+      </section>
 
-        <div class="ayuda-contacto-card">
-          <i class="ti ti-mail"></i>
-          <div class="ayuda-contacto-nombre">Correo electrónico</div>
-          <p>Escríbenos y te respondemos en menos de 24 horas hábiles.</p>
-          <a href="formulario-contacto.html" class="btn-primary">Enviar correo</a>
-        </div>
-
-        <div class="ayuda-contacto-card">
-          <i class="ti ti-phone"></i>
-          <div class="ayuda-contacto-nombre">Llámanos</div>
-          <p>Lun - Vie: 9:00 AM - 6:00 PM</p>
-          <p>+51 9XX XXX XXX</p>
-          <!-- tel: abre el marcador en móvil -->
-          <a href="tel:+519XXXXXXXX" class="btn-primary">Llamar ahora</a>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- BANNER FINAL
+      <!-- BANNER FINAL
          Franja con texto a la izquierda y botón a la derecha
          El div interno agrupa h2 + p para que flexbox los trate como un bloque -->
-    <div class="ayuda-banner">
-      <div>
-        <h2>¿Necesitas atención personalizada?</h2>
-        <p>Completa el formulario y un asesor se comunicará contigo a la brevedad.</p>
+      <div class="ayuda-banner">
+        <div>
+          <h2>¿Necesitas atención personalizada?</h2>
+          <p>
+            Completa el formulario y un asesor se comunicará contigo a la
+            brevedad.
+          </p>
+        </div>
+        <a href="formulario-contacto.html" class="btn-primary"
+          >Contactar soporte</a
+        >
       </div>
-      <a href="formulario-contacto.html" class="btn-primary">Contactar soporte</a>
-    </div>
+    </main>
 
     <!-- footer inyectado dinámicamente por components.js -->
     <div id="site-footer"></div>
