@@ -14,6 +14,17 @@
   margin-top: 2rem;
 }
 
+/* Separación vertical: estos bloques perdieron el padding superior,
+   así que se les añade margen para que no queden pegados al bloque de arriba */
+.tienda-destacados {
+  margin-top: 2.5rem;
+}
+
+.promo-wrap {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
 /* PLACEHOLDER DEL BANNER PRINCIPAL (TIENDA HERO) */
 .tienda-banner-placeholder {
    width: 100%;
