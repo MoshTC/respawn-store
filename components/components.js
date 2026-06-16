@@ -24,8 +24,16 @@ const paginas = [
     href: "../paginas/Inicio.html",
   },
   {
-    label: 'Productos',
-    href: '../paginas/productos.html',
+    label: "Productos",
+    href: "../paginas/productos.html",
+    dropdown: [
+      /* cada item del dropdown: label, icono Tabler y href */
+      {
+        label: "Gift Cards",
+        icon: "ti-gift",
+        href: "../paginas/giftcards.html",
+      },
+    ],
   },
   {
     label: "Comunidad",
