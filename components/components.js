@@ -33,6 +33,11 @@ const paginas = [
         icon: "ti-gift",
         href: "../paginas/giftcards.html",
       },
+      {
+        label: "Juegos",
+        icon: "ti-device-gamepad-2",
+        href: "../paginas/Juegos.html",
+      },
     ],
   },
   {
