@@ -6,171 +6,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Respawn Store</title>
 
-    <!-- Fuentes -->
+    <!-- Fuentes del proyecto -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <!-- Iconos -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+    <!-- Iconos Tabler (los usa el navbar inyectado por components.js) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3/dist/tabler-icons.min.css">
 
     <!-- Estilos globales -->
     <link rel="stylesheet" href="../css/base.css">
 </head>
 
-<body style="background-color:#050B1F; color:white; font-family:'DM Sans', sans-serif;">
+<body>
 
     <!-- ================= NAVBAR (DINÁMICO) ================= -->
     <div id="navbar"></div>
 
-    <!-- ================= HERO ================= -->
-    <div style="display:flex; align-items:center; justify-content:space-between; gap:40px; padding:80px 50px; margin-bottom:100px;">
-
-        <div style="width:45%;">
-
-            <h1 style="font-size:55px; margin-bottom:20px;">
-                TU PRÓXIMA AVENTURA COMIENZA AQUÍ
-            </h1>
-
-            <p style="font-size:20px; line-height:1.6;">
-                En Respawn Store encontrarás las mejores consolas,
-                accesorios y juegos para llevar tu experiencia gamer
-                al siguiente nivel.
-            </p>
-
-            <br>
-
-            <a href="#historia">
-                <button style="
-                    padding:15px 25px;
-                    background-color:#4F46E5;
-                    color:white;
-                    border:none;
-                    border-radius:10px;
-                    cursor:pointer;">
-                    Conócenos
-                </button>
-            </a>
-
+    <main>
+        <!-- ================= HERO ================= -->
+        <div class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-content">
+                <span class="hero-tag">Sobre nosotros</span>
+                <h1>Tu próxima<br><span>aventura</span><br>comienza aquí</h1>
+                <p>
+                    En Respawn Store encontrarás las mejores consolas, accesorios
+                    y juegos para llevar tu experiencia gamer al siguiente nivel.
+                </p>
+                <div class="hero-btns">
+                    <a href="#historia"><button class="btn-primary">Conócenos</button></a>
+                </div>
+            </div>
+            <div class="hero-decoration">
+                <img src="../imagenes/imagen consola.png" alt="Consola principal"
+                    style="width: 100%; height: 100%; object-fit: contain; object-position: right center;">
+            </div>
         </div>
 
-        <div>
-            <img src="../imagenes/imagen consola.png" width="700" alt="Consola principal">
+        <!-- ================= HISTORIA ================= -->
+        <div class="promo-wrap" id="historia">
+            <div class="promo">
+                <div>
+                    <div class="promo-tag">Nuestra historia</div>
+                    <h2>Nuestra <span>historia</span></h2>
+                    <p>
+                        Respawn Store nació con el objetivo de ofrecer las mejores
+                        consolas y accesorios para los amantes de los videojuegos.
+                        Nuestro compromiso es brindar calidad, confianza y una gran
+                        experiencia a cada cliente.
+                    </p>
+                    <div class="promo-btns">
+                        <button class="btn-ghost">Leer más</button>
+                    </div>
+                </div>
+                <div class="promo-img">
+                    <img src="../imagenes/cuarto gamer.png" alt="Cuarto gamer"
+                        style="width: 100%; height: 100%; object-fit: cover; object-position: center center;">
+                </div>
+            </div>
         </div>
 
-    </div>
+        <!-- ================= EQUIPO ================= -->
+        <section id="equipo">
+            <div class="section-title">Conoce al equipo</div>
+            <div class="section-sub">
+                Detrás de cada pedido y cada recomendación, hay un equipo de gamers como tú para ayudarte.
+            </div>
+            <img src="../imagenes/equipo.png" alt="Equipo de Respawn Store"
+                style="width: 100%; border-radius: 14px; border: 1px solid var(--border); margin-bottom: 1.25rem;">
+            <div class="hero-btns">
+                <button class="btn-primary">Ver equipo</button>
+            </div>
+        </section>
 
-    <!-- ================= HISTORIA ================= -->
-    <section id="historia"
-        style="display:flex; align-items:center; justify-content:space-between; gap:40px; padding:50px; margin-bottom:100px;">
-
-        <div style="width:45%;">
-
-            <h1>NUESTRA HISTORIA</h1>
-
-            <p style="line-height:1.8;">
-                Respawn Store nació con el objetivo de ofrecer las mejores
-                consolas y accesorios para los amantes de los videojuegos.
-                Nuestro compromiso es brindar calidad, confianza y una gran
-                experiencia a cada cliente.
-            </p>
-
-            <br>
-
-            <a href="historia.html">
-                <button style="
-                    padding:15px 25px;
-                    background-color:#4F46E5;
-                    color:white;
-                    border:none;
-                    border-radius:10px;
-                    cursor:pointer;">
-                    Leer más
-                </button>
-            </a>
-
+        <!-- ================= UBICACIÓN ================= -->
+        <div class="promo-wrap" id="ubicacion">
+            <div class="promo">
+                <div>
+                    <div class="promo-tag">Visítanos</div>
+                    <h2>Nuestra <span>ubicación</span></h2>
+                    <p>
+                        Visítanos en nuestra tienda física o contáctanos en
+                        nuestras redes. ¡Te esperamos!
+                    </p>
+                    <div class="promo-btns">
+                        <a href="https://maps.google.com" target="_blank">
+                            <button class="btn-primary">Cómo llegar</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="promo-img">
+                    <img src="../imagenes/ubi.webp" alt="Ubicación de la tienda"
+                        style="width: 100%; height: 100%; object-fit: cover; object-position: center center;">
+                </div>
+            </div>
         </div>
-
-        <div>
-            <img src="../imagenes/cuarto gamer.png"
-                width="700"
-                style="border-radius:20px;"
-                alt="Historia">
-        </div>
-
-    </section>
-
-    <!-- ================= EQUIPO ================= -->
-    <section id="equipo"
-        style="padding:50px; text-align:center; margin-bottom:100px;">
-
-        <h1>CONOCE AL EQUIPO</h1>
-
-        <p style="font-size:18px;">
-            Detrás de cada pedido y cada recomendación,
-            hay un equipo de gamers como tú para ayudarte.
-        </p>
-
-        <br>
-
-        <a href="equipo.html">
-            <button style="
-                padding:15px 25px;
-                background-color:#4F46E5;
-                color:white;
-                border:none;
-                border-radius:10px;
-                cursor:pointer;">
-                Ver Equipo
-            </button>
-        </a>
-
-        <br><br>
-
-        <img src="../imagenes/equipo.png"
-            width="1200"
-            style="max-width:100%; border-radius:20px;"
-            alt="Equipo">
-
-    </section>
-
-    <!-- ================= UBICACIÓN ================= -->
-    <section id="ubicacion"
-        style="display:flex; align-items:center; justify-content:space-between; gap:40px; padding:50px; margin-bottom:100px;">
-
-        <div style="width:45%;">
-
-            <h1>NUESTRA UBICACIÓN</h1>
-
-            <p style="line-height:1.8;">
-                Visítanos en nuestra tienda física o contáctanos
-                en nuestras redes. ¡Te esperamos!
-            </p>
-
-            <br>
-
-            <a href="https://maps.google.com" target="_blank">
-                <button style="
-                    padding:15px 25px;
-                    background-color:#4F46E5;
-                    color:white;
-                    border:none;
-                    border-radius:10px;
-                    cursor:pointer;">
-                    Cómo llegar
-                </button>
-            </a>
-
-        </div>
-
-        <div>
-            <img src="../imagenes/ubi.webp"
-                width="700"
-                height="300"
-                style="object-fit:cover; border-radius:20px;"
-                alt="Ubicación">
-        </div>
-
-    </section>
+    </main>
 
     <!-- ================= FOOTER (DINÁMICO) ================= -->
     <div id="site-footer"></div>
@@ -179,4 +110,5 @@
     <script src="../components/components.js"></script>
 
 </body>
+
 </html>
