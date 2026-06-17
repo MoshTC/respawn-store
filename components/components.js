@@ -25,7 +25,20 @@ const paginas = [
   },
   {
     label: "Productos",
-    href: "#",
+    href: "../paginas/productos.html",
+    dropdown: [
+      /* cada item del dropdown: label, icono Tabler y href */
+      {
+        label: "Gift Cards",
+        icon: "ti-gift",
+        href: "../paginas/giftcards.html",
+      },
+      {
+        label: "Juegos",
+        icon: "ti-device-gamepad-2",
+        href: "../paginas/Juegos.html",
+      },
+    ],
   },
   {
     label: "Comunidad",

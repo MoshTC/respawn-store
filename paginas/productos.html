@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Consolas y Accesorios — Respawn Store</title>
+    <!-- Fuentes del proyecto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+    <!-- Librería de iconos Tabler -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3/dist/tabler-icons.min.css" />
+    <!-- Estilos globales compartidos -->
+    <link rel="stylesheet" href="../css/base.css" />
+    <!-- Estilos exclusivos de esta sección -->
+    <link rel="stylesheet" href="../css/consolas.css" />
+  </head>
+  <body>
+    <!-- Navbar dinámico -->
+    <div id="navbar"></div>
+
+    <main>
+
+    <!-- BANNER PRINCIPAL (HERO) -->
+    <div class="tienda-banner-principal-wrap">
+      <div class="tienda-banner-placeholder">
+        <img src="../imagenes/VIVE EL JUEGO.jpg" alt="banner principal">
+      </div>
+    </div>
+
+    <!-- SECCIÓN DE PRODUCTOS DESTACADOS (GRID PRINCIPAL) -->
+    <section class="tienda-destacados">
+      <div class="products">
+        <!-- Producto 1 -->
+        <div class="product-card">
+          <div class="card-img">
+            <span class="card-badge">Top</span>
+            <img src="../imagenes/ps5.png" alt="PlayStation 5 Slim" style="width: 100%; height: 100%; object-fit: contain; object-position: center center;">
+          </div>
+          <div class="card-body">
+            <div class="card-name">PlayStation 5 Slim</div>
+            <div class="card-cat">Consolas • Sony</div>
+            <div class="card-footer">
+              <span class="price">S/ 2,499.00</span>
+              <button class="btn-detail">Ver detalles</button>
+            </div>
+          </div>
+        </div>
+        <!-- Producto 2 -->
+        <div class="product-card">
+          <div class="card-img">
+            <img src="../imagenes/xboxs.png" alt="Xbox Series X" style="width: 100%; height: 100%; object-fit: contain; object-position: center center;">
+          </div>
+          <div class="card-body">
+            <div class="card-name">Xbox Series X</div>
+            <div class="card-cat">Consolas • Microsoft</div>
+            <div class="card-footer">
+              <span class="price">S/ 2,699.00</span>
+              <button class="btn-detail">Ver detalles</button>
+            </div>
+          </div>
+        </div>
+        <!-- Producto 3 -->
+        <div class="product-card">
+          <div class="card-img">
+            <img src="../imagenes/switch2.png" alt="Nintendo Switch OLED" style="width: 100%; height: 100%; object-fit: contain; object-position: center center;">
+          </div>
+          <div class="card-body">
+            <div class="card-name">Nintendo Switch OLED</div>
+            <div class="card-cat">Consolas • Nintendo</div>
+            <div class="card-footer">
+              <span class="price">S/ 1,499.00</span>
+              <button class="btn-detail">Ver detalles</button>
+            </div>
+          </div>
+        </div>
+        <!-- Producto 4 -->
+        <div class="product-card">
+          <div class="card-img">
+            <img src="../imagenes/steamdeck.png" alt="Steam Deck OLED (1TB)" style="width: 100%; height: 100%; object-fit: contain; object-position: center center;">
+          </div>
+          <div class="card-body">
+            <div class="card-name">Steam Deck OLED (1TB)</div>
+            <div class="card-cat">Consolas • Valve</div>
+            <div class="card-footer">
+              <span class="price">S/ 3,199.00</span>
+              <button class="btn-detail">Ver detalles</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN NUEVOS LANZAMIENTOS (DISEÑO PROMO REUTILIZADO) -->
+    <div class="promo-wrap">
+      <div class="promo">
+        <div>
+          <div class="promo-tag">Nuevos lanzamientos</div>
+          <h2>STEAM <span>DECK</span></h2>
+          <div class="promo-sub">Disfruta de lo nuevo en consolas</div>
+          <p>Experimenta un rendimiento gráfico sin precedentes, trazado de rayos avanzado y tasas de fotogramas más fluidas.</p>
+          <div class="promo-btns">
+            <button class="btn-primary">Más información</button>
+            <button class="btn-ghost">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="promo-img">
+          <div class="wireframe-media-box">
+            <img src="../imagenes/SteamDpublicidad.jpg" alt="Steam Deck OLED (1TB)" >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECCIONES DE MARCAS (GAMES GRID ADAPTADO A MINI-CARDS) -->
+    
+    <!-- PlayStation -->
+    <section class="tienda-marca">
+      <h2 class="section-title">PlayStation</h2>
+      <p class="section-sub">Juega sin límites</p>
+      <div class="games grid-mini-cards">
+        <div class="game-card"><img src="../imagenes/ps5.png" alt="PlayStation 5"></div>
+        <div class="game-card"><img src="../imagenes/mandops.png" alt="PlayStation 5"></div>
+        <div class="game-card"><img src="../imagenes/ps4.png" alt="PlayStation 5"></div>
+        <div class="game-card"><img src="../imagenes/mandops4.png" alt="PlayStation 5"></div>
+      </div>
+    </section>
+
+    <!-- Xbox -->
+    <section class="tienda-marca">
+      <h2 class="section-title">Xbox</h2>
+      <p class="section-sub">Impulsa tus sueños</p>
+      <div class="games grid-mini-cards">
+        <div class="game-card"><img src="../imagenes/xboxs.png" alt="Xbox Series X"></div>
+        <div class="game-card"><img src="../imagenes/xboxblack.png" alt="Xbox Series X"></div>
+        <div class="game-card"><img src="../imagenes/xboxally.png" alt="Xbox Series X"></div>
+        <div class="game-card"><img src="../imagenes/mandoxbox.png" alt="Xbox Series X"></div>
+      </div>
+    </section>
+
+    <!-- Nintendo -->
+    <section class="tienda-marca">
+      <h2 class="section-title">Nintendo</h2>
+      <p class="section-sub">Siempre hay una nueva aventura</p>
+      <div class="games grid-mini-cards">
+        <div class="game-card"><img src="../imagenes/switch2.png" alt="Nintendo Switch"></div>
+        <div class="game-card"><img src="../imagenes/ds.png" alt="Nintendo Switch"></div>
+        <div class="game-card"><img src="../imagenes/3ds.png" alt="Nintendo Switch"></div>
+        <div class="game-card"><img src="../imagenes/nintendo.png" alt="Nintendo Switch"></div>
+      </div>
+    </section>
+    
+    <!-- BANNER DE CIERRE DEL WIREFRAME -->
+    <div class="tienda-footer-banner-wrap">
+      <div class="banner-publicitario-wireframe">
+        <img src="../imagenes/JUEGA CUANDO QUIERAS.jpg" alt="banner principal">
+      </div>
+    </div>
+
+    </main>
+
+    <!-- Footer dinámico -->
+    <div id="site-footer"></div>
+
+    <script src="../components/components.js"></script>
+  </body>
+</html>

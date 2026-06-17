@@ -18,7 +18,7 @@ pondrá en contacto contigo lo antes posible.
 
 FORMULARIO DE CONTACTO
 
-Nombre completo
+Nombre
 Apellido
 Correo electrónico
 Teléfono
@@ -37,8 +37,8 @@ OTROS CANALES
 
 Teléfono
 +51 900 000 000
-Lun – Jue: 9:00 – 18:00
-Sábado: 10:00 – 14:00
+Lun – Vie: 9:00 – 18:00
+Sábado: 9:00 – 13:00
 Domingo: Cerrado
 
 Chat en vivo
@@ -68,7 +68,7 @@ Usamos tu información únicamente para responder tu consulta y darle seguimient
 No la usamos para publicidad ni la compartimos con terceros.
 
 ¿Por cuánto tiempo los guardamos?
-Conservamos tus datos por un máximo de 12 meses desde tu última interacción.
+Conservamos tus datos por un máximo de 12 meses desde tu última interacción con nosotros.
 
 ¿Cuáles son tus derechos?
 Puedes solicitar acceso, corrección o eliminación de tus datos en cualquier

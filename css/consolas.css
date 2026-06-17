@@ -1,0 +1,125 @@
+/* MARGENES ENTRE BLOQUES */
+.tienda-banner-principal-wrap,
+.tienda-filtros-wrap,
+.tienda-destacados,
+.promo-wrap,
+.tienda-marca,
+.tienda-footer-banner-wrap {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.tienda-banner-principal-wrap {
+  margin-top: 2rem;
+}
+
+/* Separación vertical: estos bloques perdieron el padding superior,
+   así que se les añade margen para que no queden pegados al bloque de arriba */
+.tienda-destacados {
+  margin-top: 2.5rem;
+}
+
+.promo-wrap {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+/* PLACEHOLDER DEL BANNER PRINCIPAL (TIENDA HERO) */
+.tienda-banner-placeholder {
+   width: 100%;
+  height: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.tienda-banner-placeholder img {
+ width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover; 
+}
+
+/* FILTROS (PILLS EXTRA AJUSTES) */
+.tienda-filtros-wrap {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* COMPLEMENTO PARA SECCIÓN DE NUEVOS LANZAMIENTOS*/
+.wireframe-media-box {
+   width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.wireframe-media-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+}
+
+/* SECCIONES DE MARCA (REUTILIZANDO CLASES DEL HISTORIAL DE TU PROYECTO) */
+.tienda-marca {
+  margin-bottom: 2.5rem;
+}
+
+/* Ajustes especiales para las mini tarjetas*/
+.grid-mini-cards {
+  margin-top: 1rem;
+}
+
+.grid-mini-cards .game-img {
+  height: 140px; /* Reducción de tamaño sutil como detalla el plano */
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* BANNER DE PUBLICIDAD/CIERRE (INFERIOR) */
+.tienda-footer-banner-wrap {
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+}
+
+.banner-publicitario {
+  width: 100%;
+  height: 180px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.banner-publicitario-wireframe img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.game-card {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.game-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover; /* o contain si prefieres que no se recorte */
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+  .products, .games {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .products, .games {
+    grid-template-columns: 1fr;
+  }
+  .tienda-banner-placeholder {
+    height: 180px;
+  }
+}
