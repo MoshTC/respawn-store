@@ -19,45 +19,83 @@
     <link rel="stylesheet" href="../css/base.css" />
     <!-- llama al esilo de la pagina -->
     <link rel="stylesheet" href="../css/comunidad.css" />
+    <link rel="stylesheet" href="../lightbox/css/lightbox.css" />
+    <script src="../lightbox/js/lightbox-plus-jquery.min.js"></script>
   </head>
   <body>
     <div id="navbar"></div>
     <div>
       <img
         class="comunidad-banner"
-        src="../imagenes/comunidadbanner1.png"
+        src="../imagenes/comunidad banner.png"
         alt="banner principal de comunidad"
       />
     </div>
     <h1 class="titulo-comunidad">
-      Explora Nuestras <span style="color: var(--cyan)">Secciones</span>
+      Desctados <span style="color: var(--cyan)">Hoy</span>
     </h1>
-    <section class="comunidad-cards">
-      <div class="comunidad-contenedor">
-        <i class="ti ti-file-description"></i>
-        <h1>Blog</h1>
-        <p>
-          Descubre articulos con las novedad, notcias y tendencias del mundo
-          gamer
-        </p>
-        <button class="btn-primary">Ir al blog</button>
+    <section class="cards-destacados">
+      <div class="Destacado">
+        <img src="../imagenes/articulo11.png" alt="" />
+        <h2>Las 23 consolas más vendidas de la historia (2026)</h2>
+        <a
+          href="https://vandal.elespanol.com/reportaje/las-20-consolas-mas-vendidas-de-la-historia"
+          target="_blank"
+          >leer más..</a
+        >
       </div>
-      <div class="comunidad-contenedor">
-        <i class="ti ti-dual-screen"></i>
-        <h1>Consejos y guias</h1>
-        <p>
-          Recomendaciones y opiniones para mejorar tu experiencia en el mundo
-          gamer
-        </p>
-        <button class="btn-primary">Ir al consejos y guias</button>
-      </div>
+
+      <aside>
+        <div class="cards-aside">
+          <img src="../imagenes/opiniones4.png" alt="" />
+          <div class="info">
+            <h5>opinión</h5>
+            <h4>
+              Un videojuego puede ser bueno y no para todo el mundo. Tomodachi
+              Life: Una vida de ensueño lo demuestra
+            </h4>
+            <a
+              href="https://www.vidaextra.com/analisis/videojuego-puede-ser-bueno-no-para-todo-mundo-tomodachi-life-vida-ensueno-demuestra"
+              target="_blank"
+              >leer más..</a
+            >
+          </div>
+        </div>
+        <div class="cards-aside">
+          <img src="../imagenes/guia4.png" alt="" />
+          <div class="info">
+            <h5>Guia</h5>
+            <h4>Guía completa Palworld: Trucos, secretos y consejos</h4>
+            <a
+              href="https://vandal.elespanol.com/guias/guia-palworld-trucos-consejos-y-secretos"
+              target="_blank"
+              >leer más..</a
+            >
+          </div>
+        </div>
+        <div class="cards-aside">
+          <img src="../imagenes/opiniones5.png" alt="" />
+          <div class="info">
+            <h5>opinión</h5>
+            <h4>This Is Fine: Maximum Cope - Análisis</h4>
+            <a
+              href="https://vandal.elespanol.com/analisis/ps5/this-is-fine-maximum-cope/225944#p-89"
+              target="_blank"
+              >leer más..</a
+            >
+          </div>
+        </div>
+      </aside>
     </section>
     <h1 class="titulo-comunidad">
       Articulos más <span style="color: var(--cyan)">recientes del blog</span>
     </h1>
     <section class="contenedor-articulos">
       <div class="article">
-        <img class="img-articulos" src="../imagenes/articulo1.webp" alt="" />
+        <a href="../imagenes/articulo1Mediano.jpeg" data-lightbox="Grupo"
+          ><img class="img-articulos" src="../imagenes/articulo1.webp" alt=""
+        /></a>
+
         <h2>Share of the Week – LEGO Batman: Legacy of the Dark Knight</h2>
         <a
           href="https://blog.playstation.com/2026/05/29/share-of-the-week-lego-batman-legacy-of-the-dark-knight/"
@@ -66,7 +104,10 @@
         >
       </div>
       <div class="article">
-        <img class="img-articulos" src="../imagenes/articulo2.webp" alt="" />
+        <a href="../imagenes/articulo2Mediano.jpeg" data-lightbox="Grupo">
+          <img class="img-articulos" src="../imagenes/articulo2.webp" alt=""
+        /></a>
+
         <h2>
           Nintendo Switch 2 cumple su primer aniversario tras un año histórico
           en el que ha batido toda clase de récords
@@ -79,7 +120,10 @@
         >
       </div>
       <div class="article">
-        <img class="img-articulos" src="../imagenes/articulo3.jpeg" alt="" />
+        <a href="../imagenes/articulo3Mediano.jpeg" data-lightbox="Grupo">
+          <img class="img-articulos" src="../imagenes/articulo3.jpeg" alt=""
+        /></a>
+
         <h2>
           Si tenías alguna esperanza de comprar una Steam Deck OLED, tienes que
           saber esto
@@ -92,7 +136,9 @@
         >
       </div>
       <div class="article">
-        <img class="img-articulos" src="../imagenes/articulo4.jpg" alt="" />
+        <a href="../imagenes/articulo4Mediano.jpeg" data-lightbox="Grupo">
+          <img class="img-articulos" src="../imagenes/articulo4.jpg" alt="" />
+        </a>
 
         <h2>
           Resumen: Todas las novedades más importantes de Xbox presentadas en el
@@ -107,5 +153,6 @@
     </section>
     <div id="site-footer"></div>
     <script src="../components/components.js"></script>
+    <script src="../script/comunidad.js"></script>
   </body>
 </html>

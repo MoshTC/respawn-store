@@ -30,6 +30,18 @@ const paginas = [
   {
     label: "Comunidad",
     href: "../paginas/comunidad.html",
+    dropdown: [
+      {
+        label: "Blog",
+        icon: "ti ti-file-description",
+        href: "../paginas/Blog.html",
+      },
+      {
+        label: "Consejos y guias",
+        icon: "ti ti-dual-screen",
+        href: "../paginas/consejosYguias.html",
+      },
+    ],
   },
   {
     label: "Ayuda",

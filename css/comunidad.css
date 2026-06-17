@@ -10,47 +10,66 @@
   font-size: 37px;
   letter-spacing: 1px;
 }
-.comunidad-contenedor {
-  background: var(--bg3);
+.titulo-comunidad::after {
+  content: "";
+  display: block;
+  width: 150px;
+  height: 3px;
+  background: var(--cyan);
+  margin-top: 5px;
+}
+.Destacado {
+  background: linear-gradient(145deg, #0f172a, #020617);
   border: 1px solid var(--border);
   border-radius: 10px;
-  width: 330px;
-  height: 360px;
+  width: 700px;
+  height: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   justify-content: center;
+  overflow: hidden;
+
   padding: 7px;
   gap: 15px;
+  position: relative;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
-.comunidad-contenedor:hover,
-.article:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+.Destacado a {
+  font-size: 20px;
 }
-.comunidad-cards {
-  display: flex;
-  gap: 90px;
-  justify-content: center;
+.comunidad-contenedor::before {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background: rgba(0, 140, 255, 0.15);
+  filter: blur(90px);
+  top: -40px;
+  left: -40px;
+  z-index: 0;
 }
-.ti-file-description {
-  font-size: 70px;
-  align-items: center;
-}
-.ti-dual-screen {
-  font-size: 70px;
-  align-items: center;
+
+.article:hover,
+.Destacado:hover,
+.cards-aside:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(6, 36, 60, 0.25);
 }
 
 .img-articulos {
   width: 100%;
-  height: 200px; /* 👈 mitad del div */
-  object-fit: cover; /* para que no se deforme */
+  height: 200px;
+  object-fit: cover;
   display: block;
 }
+
 .article {
-  background: var(--bg3);
+  background: linear-gradient(145deg, #0f172a, #020617);
   border: 1px solid var(--border);
   border-radius: 10px;
   width: 470px;
@@ -60,22 +79,46 @@
   align-items: center;
   text-align: center;
   justify-content: center;
-  overflow: hidden; /* importante */
+  overflow: hidden;
 
   padding: 7px;
   gap: 15px;
+  position: relative;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
+
+.article::before {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: rgba(0, 140, 255, 0.15);
+  filter: blur(100px);
+  top: -50px;
+  left: -50px;
+  z-index: 0;
+}
+
 .article h2 {
   font-size: 20px;
   flex-grow: 1;
 }
-.article a {
-  font-size: 20px;
+.article a,
+.info a {
+  font-size: 18px;
   color: var(--cyan);
+  transition: 0.3s;
+  z-index: 1;
 }
 
-.article a:hover {
-  color: var(--dim);
+.article a:hover,
+.Destacado a:hover,
+.info a:hover {
+  color: white;
+  text-shadow: 0 0 10px var(--cyan);
 }
 .contenedor-articulos {
   display: flex;
@@ -83,5 +126,53 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 120px;
+  gap: 50px;
+}
+
+.cards-destacados {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 150px;
+  justify-content: center;
+  align-items: center;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  background: linear-gradient(145deg, #0f172a, #020617);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  width: 500px;
+  height: 530px;
+}
+
+.cards-aside {
+  display: flex;
+  align-items: center;
+  text-align: justify;
+  width: auto;
+  height: 150px;
+
+  gap: 20px;
+}
+aside img {
+  width: 200px;
+  height: 150px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.info h4 {
+  font-size: 15px;
+  padding-right: 10px;
+}
+
+.Destacado img {
+  width: 100%;
 }
