@@ -17,15 +17,6 @@
     <link rel="stylesheet" href="../css/base.css" />
 
     <style>
-      /* =====================================================
-         EFECTO 1: ANIMACIÓN DE ENTRADA
-         =====================================================
-         @keyframes define los pasos de una animación.
-         "from" = estado inicial, "to" = estado final.
-         - opacity 0→1: el elemento pasa de invisible a visible
-         - translateY(30px)→0: sube 30px hasta su lugar normal
-         La animación se llama "entrada" y dura 0.8 segundos.
-      */
       @keyframes entrada {
         from {
           opacity: 0;
@@ -36,46 +27,19 @@
           transform: translateY(0);
         }
       }
-
-      /* Aplicamos "entrada" al contenido del hero.
-         "both" mantiene el estado final al terminar. */
       .hero-content {
         animation: entrada 0.8s ease 0.1s both;
       }
-
-      /* =====================================================
-         EFECTO 2: IMAGEN FLOTANTE
-         =====================================================
-         Usamos porcentajes para controlar 3 momentos:
-         0%  = posición normal
-         50% = sube 12 píxeles
-         100%= vuelve a la posición normal
-         "infinite" hace que se repita para siempre.
-      */
       @keyframes flotar {
         0%   { transform: translateY(0px);   }
         50%  { transform: translateY(-12px); }
         100% { transform: translateY(0px);   }
       }
-
-      /* Primero aparece con "entrada", luego flota.
-         Se listan dos animaciones separadas por coma. */
       .hero-decoration {
         animation:
           entrada 0.8s ease 0.4s both,
           flotar  4s   ease 1.2s infinite;
       }
-
-      /* =====================================================
-         EFECTO 3: HOVER EN BOTONES
-         =====================================================
-         "transition" hace los cambios suaves en lugar de
-         instantáneos. Formato: propiedad duración velocidad.
-         translateY(-3px) sube el botón 3px al pasar el mouse.
-         Usamos "!important" porque base.css ya define
-         "transition: opacity" en estos botones, y necesitamos
-         sobreescribir esa regla.
-      */
       .btn-primary {
         transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s !important;
       }
@@ -91,29 +55,36 @@
       .btn-ghost:hover {
         transform: translateY(-3px) !important;
       }
-
-      /* =====================================================
-         EFECTO 4: ZOOM EN IMÁGENES AL PASAR EL MOUSE
-         =====================================================
-         overflow:hidden en .promo-img evita que la imagen
-         se salga del contenedor cuando crece con el zoom.
-         scale(1.05) agranda la imagen al 105% de su tamaño.
-      */
-      .promo-img img {
-        transition: transform 0.4s ease;
+      .promo-img img,
+      #equipo img {
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        border-radius: 10px;
       }
-      .promo-img img:hover {
-        transform: scale(1.05);
+
+      .promo-img img:hover,
+      #equipo img:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 16px 40px rgba(38, 99, 235, 0.45);
+      }
+      .revelar {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+      }
+
+      .revelar.visible {
+        opacity: 1;
+        transform: translateY(0);
       }
     </style>
   </head>
 
   <body>
-    <!-- ================= NAVBAR (DINÁMICO) ================= -->
+  
     <div id="navbar"></div>
 
     <main>
-      <!-- ================= HERO ================= -->
+
       <div class="hero">
         <div class="hero-bg"></div>
         <div class="hero-content">
@@ -150,7 +121,7 @@
       </div>
 
       <!-- ================= HISTORIA ================= -->
-      <div class="promo-wrap" id="historia" style="margin-top: 2rem">
+      <div class="promo-wrap revelar" id="historia" style="margin-top: 2rem">
         <div class="promo">
           <div>
             <div class="promo-tag">Nuestra historia</div>
@@ -184,7 +155,7 @@
       </div>
 
       <!-- ================= EQUIPO ================= -->
-      <section id="equipo">
+      <section id="equipo" class="revelar">
         <div class="section-title">Conoce al equipo</div>
         <div class="section-sub">
           Detrás de cada pedido y cada recomendación, hay un equipo de gamers
@@ -206,7 +177,7 @@
       </section>
 
       <!-- ================= UBICACIÓN ================= -->
-      <div class="promo-wrap" id="ubicacion">
+      <div class="promo-wrap revelar" id="ubicacion">
         <div class="promo">
           <div>
             <div class="promo-tag">Visítanos</div>
@@ -244,5 +215,23 @@
     <div id="site-footer"></div>
 
     <script src="../components/components.js"></script>
+
+    <script>
+
+      const observer = new IntersectionObserver(
+        function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+
+      document.querySelectorAll('.revelar').forEach(function(el) {
+        observer.observe(el);
+      });
+    </script>
   </body>
 </html>
