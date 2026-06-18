@@ -5,21 +5,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Respawn Store</title>
 
-    <!-- Fuentes del proyecto -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Iconos Tabler (los usa el navbar inyectado por components.js) -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3/dist/tabler-icons.min.css"
     />
-
-    <!-- Estilos globales -->
     <link rel="stylesheet" href="../css/base.css" />
+
+    <style>
+      /* =====================================================
+         EFECTO 1: ANIMACIÓN DE ENTRADA
+         =====================================================
+         @keyframes define los pasos de una animación.
+         "from" = estado inicial, "to" = estado final.
+         - opacity 0→1: el elemento pasa de invisible a visible
+         - translateY(30px)→0: sube 30px hasta su lugar normal
+         La animación se llama "entrada" y dura 0.8 segundos.
+      */
+      @keyframes entrada {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Aplicamos "entrada" al contenido del hero.
+         "both" mantiene el estado final al terminar. */
+      .hero-content {
+        animation: entrada 0.8s ease 0.1s both;
+      }
+
+      /* =====================================================
+         EFECTO 2: IMAGEN FLOTANTE
+         =====================================================
+         Usamos porcentajes para controlar 3 momentos:
+         0%  = posición normal
+         50% = sube 12 píxeles
+         100%= vuelve a la posición normal
+         "infinite" hace que se repita para siempre.
+      */
+      @keyframes flotar {
+        0%   { transform: translateY(0px);   }
+        50%  { transform: translateY(-12px); }
+        100% { transform: translateY(0px);   }
+      }
+
+      /* Primero aparece con "entrada", luego flota.
+         Se listan dos animaciones separadas por coma. */
+      .hero-decoration {
+        animation:
+          entrada 0.8s ease 0.4s both,
+          flotar  4s   ease 1.2s infinite;
+      }
+
+      /* =====================================================
+         EFECTO 3: HOVER EN BOTONES
+         =====================================================
+         "transition" hace los cambios suaves en lugar de
+         instantáneos. Formato: propiedad duración velocidad.
+         translateY(-3px) sube el botón 3px al pasar el mouse.
+         Usamos "!important" porque base.css ya define
+         "transition: opacity" en estos botones, y necesitamos
+         sobreescribir esa regla.
+      */
+      .btn-primary {
+        transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s !important;
+      }
+      .btn-primary:hover {
+        opacity: 0.85;
+        transform: translateY(-3px) !important;
+        box-shadow: 0 8px 20px rgba(38, 99, 235, 0.4) !important;
+      }
+
+      .btn-ghost {
+        transition: border-color 0.2s, color 0.2s, transform 0.2s !important;
+      }
+      .btn-ghost:hover {
+        transform: translateY(-3px) !important;
+      }
+
+      /* =====================================================
+         EFECTO 4: ZOOM EN IMÁGENES AL PASAR EL MOUSE
+         =====================================================
+         overflow:hidden en .promo-img evita que la imagen
+         se salga del contenedor cuando crece con el zoom.
+         scale(1.05) agranda la imagen al 105% de su tamaño.
+      */
+      .promo-img img {
+        transition: transform 0.4s ease;
+      }
+      .promo-img img:hover {
+        transform: scale(1.05);
+      }
+    </style>
   </head>
 
   <body>
@@ -157,7 +243,6 @@
     <!-- ================= FOOTER (DINÁMICO) ================= -->
     <div id="site-footer"></div>
 
-    <!-- SCRIPT DEL SISTEMA -->
     <script src="../components/components.js"></script>
   </body>
 </html>
