@@ -5,229 +5,273 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gift Cards y Membresias - Respawn Store</title>
 
-    <!-- Fuentes  -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Iconos Tabler -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3/dist/tabler-icons.min.css"
     />
 
-    <!-- Estilos globales  -->
     <link rel="stylesheet" href="../css/base.css" />
-    <!-- Estilos propios de esta pagina -->
     <link rel="stylesheet" href="../css/giftcards.css" />
   </head>
 
   <body>
-    <!-- =============== NAVBAR (DINAMICO) ============== -->
     <div id="navbar"></div>
 
     <main>
+      <section style="padding-bottom: 0">
+        <div class="breadcrumb">
+          <a href="../index/index.html">Inicio</a>
+          <span>/</span>
+          <span>Productos</span>
+          <span>/</span>
+          <span class="breadcrumb-actual">Gift Cards</span>
+        </div>
+      </section>
 
-    <!-- ============== BREADCRUMB =========== -->
-    <section style="padding-bottom: 0">
-      <div class="breadcrumb">
-        <a href="../index/index.html">Inicio</a>
-        <span>/</span>
-        <span>Productos</span>
-        <span>/</span>
-        <span class="breadcrumb-actual">Gift Cards</span>
+      <div class="hero">
+        <div class="hero-bg"></div>
+
+        <div class="hero-content">
+          <span class="hero-tag">Tarjetas digitales</span>
+          <h1>Gift Cards y <span>Membresias</span></h1>
+          <p>
+            Regala la experiencia de jugar con una tarjeta prepaga para gastar
+            en juegos, complementos, suscripciones y mas. Entrega instantanea a
+            tu correo.
+          </p>
+
+          <div class="hero-btns">
+            <a href="#tarjetas">
+              <button class="btn-primary">Ver tarjetas</button>
+            </a>
+            <a href="../paginas/formulario-contacto.html">
+              <button class="btn-ghost">Contactanos</button>
+            </a>
+          </div>
+        </div>
+
+        <img
+          class="hero-img"
+          src="../imagenes/banner-top.jpg"
+          alt="Tarjetas de regalo para que la diversion no se detenga"
+        />
       </div>
-    </section>
 
-    <!-- ============== HERO ========== -->
-    <div class="hero">
-      <div class="hero-bg"></div>
-      <div class="hero-content">
-        <span class="hero-tag">Tarjetas digitales</span>
-        <h1>Gift Cards y <span>Membresias</span></h1>
-        <p>
-          Regala la experiencia de jugar con una tarjeta prepaga para gastar en
-          juegos, complementos, suscripciones y mas. Entrega instantanea a tu
-          correo.
-        </p>
-        <div class="hero-btns">
-          <a href="#tarjetas"
-            ><button class="btn-primary">Ver tarjetas</button></a
+      <div
+        style="
+          margin: 2rem 2rem 0;
+          background: var(--bg3);
+          border: 1px solid var(--border);
+          border-radius: 12px;
+          padding: 1.5rem 2rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          gap: 1.5rem;
+        "
+      >
+        <div style="display: flex; align-items: center; gap: 1.25rem">
+          <div
+            style="
+              background: var(--cyan-dim);
+              width: 48px;
+              height: 48px;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: var(--cyan);
+            "
           >
-          <a href="../paginas/formulario-contacto.html"
-            ><button class="btn-ghost">Contactanos</button></a
-          >
+            <i class="ti ti-headset" style="font-size: 26px"></i>
+          </div>
+          <div>
+            <h3
+              style="
+                font-size: 16px;
+                color: var(--text);
+                font-weight: 700;
+                margin-bottom: 4px;
+              "
+            >
+              Escucha lo que tenemos para ti
+            </h3>
+            <p style="font-size: 13px; color: var(--muted); margin: 0">
+              Conoce todos los beneficios de nuestras tarjetas digitales.
+            </p>
+          </div>
         </div>
+
+        <audio
+          controls
+          style="
+            height: 44px;
+            border-radius: 30px;
+            outline: none;
+            flex-grow: 1;
+            max-width: 350px;
+          "
+        >
+          <source src="../media/audio-intro.mp3" type="audio/mpeg" />
+          Tu navegador no soporta el elemento de audio.
+        </audio>
       </div>
-      <!-- banner de arriba (lado derecho del hero) -->
-      <img
-        class="hero-img"
-        src="../imagenes/banner-top.jpg"
-        alt="Tarjetas de regalo para que la diversion no se detenga"
-      />
-    </div>
 
-    <!-- ============= GIFT CARDS ============= -->
-    <section id="tarjetas">
-      <h2 class="section-title">Gift Cards y Membresias</h2>
-      <div class="section-sub">
-        Recarga al instante para tus juegos favoritos
-      </div>
-      <!-- cada tarjeta lleva data-categoria para que el filtro la encuentre -->
-      <div class="products">
-        <!-- Tarjeta 1 -->
-        <div class="product-card" data-categoria="juegos">
-          <div class="card-img">
-            <span class="card-badge">Top</span>
-            <img src="../imagenes/fortnite.jpg" alt="Fortnite 2800 V-Bucks" />
+      <section id="tarjetas">
+        <h2 class="section-title">Gift Cards y Membresias</h2>
+        <div class="section-sub">
+          Recarga al instante para tus juegos favoritos
+        </div>
+        <div class="products">
+          <div class="product-card" data-categoria="juegos">
+            <div class="card-img">
+              <span class="card-badge">Top</span>
+              <img src="../imagenes/fortnite.jpg" alt="Fortnite 2800 V-Bucks" />
+            </div>
+            <div class="card-body">
+              <div class="card-name">Fortnite 2800 V-Bucks</div>
+              <div class="card-cat">Gift Card - Epic Games</div>
+              <div class="card-footer">
+                <span class="price">S/ 79.90</span>
+                <button class="btn-detail">Añadir</button>
+              </div>
+            </div>
           </div>
-          <div class="card-body">
-            <div class="card-name">Fortnite 2800 V-Bucks</div>
-            <div class="card-cat">Gift Card - Epic Games</div>
-            <div class="card-footer">
-              <span class="price">S/ 79.90</span>
-              <button class="btn-detail">Añadir</button>
+
+          <div class="product-card" data-categoria="juegos">
+            <div class="card-img">
+              <img
+                src="../imagenes/freefire.jpg"
+                alt="Free Fire 1080 Diamantes"
+              />
+            </div>
+            <div class="card-body">
+              <div class="card-name">Free Fire 1080 Diamantes</div>
+              <div class="card-cat">Gift Card - Garena</div>
+              <div class="card-footer">
+                <span class="price">S/ 29.90</span>
+                <button class="btn-detail">Añadir</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-categoria="juegos">
+            <div class="card-img">
+              <img
+                src="../imagenes/mobile-legends.jpg"
+                alt="Mobile Legends 500 Diamantes"
+              />
+            </div>
+            <div class="card-body">
+              <div class="card-name">Mobile Legends 500 Dimas</div>
+              <div class="card-cat">Gift Card - Moonton</div>
+              <div class="card-footer">
+                <span class="price">S/ 34.90</span>
+                <button class="btn-detail">Añadir</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-categoria="juegos">
+            <div class="card-img">
+              <img
+                src="../imagenes/league-of-legends.jpg"
+                alt="League of Legends 1380 RP"
+              />
+            </div>
+            <div class="card-body">
+              <div class="card-name">League of Legends 1380 RP</div>
+              <div class="card-cat">Gift Card - Riot Games</div>
+              <div class="card-footer">
+                <span class="price">S/ 49.90</span>
+                <button class="btn-detail">Añadir</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-categoria="juegos">
+            <div class="card-img">
+              <img
+                src="../imagenes/minecraft.jpg"
+                alt="Minecraft 1720 Minecoins"
+              />
+            </div>
+            <div class="card-body">
+              <div class="card-name">Minecraft 1720 Minecoins</div>
+              <div class="card-cat">Gift Card - Mojang</div>
+              <div class="card-footer">
+                <span class="price">S/ 39.90</span>
+                <button class="btn-detail">Añadir</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-categoria="roblox">
+            <div class="card-img">
+              <img src="../imagenes/roblox.jpg" alt="Roblox 800 Robux" />
+            </div>
+            <div class="card-body">
+              <div class="card-name">Roblox 800 Robux</div>
+              <div class="card-cat">Gift Card - Roblox</div>
+              <div class="card-footer">
+                <span class="price">S/ 44.90</span>
+                <button class="btn-detail">Añadir</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-categoria="steam">
+            <div class="card-img">
+              <span class="card-badge">Popular</span>
+              <img src="../imagenes/steam.jpg" alt="Steam Wallet 50 USD" />
+            </div>
+            <div class="card-body">
+              <div class="card-name">Steam Wallet 50 USD</div>
+              <div class="card-cat">Gift Card - Steam</div>
+              <div class="card-footer">
+                <span class="price">S/ 189.90</span>
+                <button class="btn-detail">Añadir</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-categoria="roblox">
+            <div class="card-img">
+              <img
+                src="../imagenes/roblox-premium.jpg"
+                alt="Roblox 2000 Robux"
+              />
+            </div>
+            <div class="card-body">
+              <div class="card-name">Roblox 2000 Robux</div>
+              <div class="card-cat">Gift Card - Roblox</div>
+              <div class="card-footer">
+                <span class="price">S/ 99.90</span>
+                <button class="btn-detail">Añadir</button>
+              </div>
             </div>
           </div>
         </div>
+      </section>
 
-        <!-- Tarjeta 2 -->
-        <div class="product-card" data-categoria="juegos">
-          <div class="card-img">
-            <img
-              src="../imagenes/freefire.jpg"
-              alt="Free Fire 1080 Diamantes"
-            />
-          </div>
-          <div class="card-body">
-            <div class="card-name">Free Fire 1080 Diamantes</div>
-            <div class="card-cat">Gift Card - Garena</div>
-            <div class="card-footer">
-              <span class="price">S/ 29.90</span>
-              <button class="btn-detail">Añadir</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tarjeta 3 -->
-        <div class="product-card" data-categoria="juegos">
-          <div class="card-img">
-            <img
-              src="../imagenes/mobile-legends.jpg"
-              alt="Mobile Legends 500 Diamantes"
-            />
-          </div>
-          <div class="card-body">
-            <div class="card-name">Mobile Legends 500 Dimas</div>
-            <div class="card-cat">Gift Card - Moonton</div>
-            <div class="card-footer">
-              <span class="price">S/ 34.90</span>
-              <button class="btn-detail">Añadir</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tarjeta 4 -->
-        <div class="product-card" data-categoria="juegos">
-          <div class="card-img">
-            <img
-              src="../imagenes/league-of-legends.jpg"
-              alt="League of Legends 1380 RP"
-            />
-          </div>
-          <div class="card-body">
-            <div class="card-name">League of Legends 1380 RP</div>
-            <div class="card-cat">Gift Card - Riot Games</div>
-            <div class="card-footer">
-              <span class="price">S/ 49.90</span>
-              <button class="btn-detail">Añadir</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tarjeta 5 -->
-        <div class="product-card" data-categoria="juegos">
-          <div class="card-img">
-            <img
-              src="../imagenes/minecraft.jpg"
-              alt="Minecraft 1720 Minecoins"
-            />
-          </div>
-          <div class="card-body">
-            <div class="card-name">Minecraft 1720 Minecoins</div>
-            <div class="card-cat">Gift Card - Mojang</div>
-            <div class="card-footer">
-              <span class="price">S/ 39.90</span>
-              <button class="btn-detail">Añadir</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tarjeta 6 -->
-        <div class="product-card" data-categoria="roblox">
-          <div class="card-img">
-            <img src="../imagenes/roblox.jpg" alt="Roblox 800 Robux" />
-          </div>
-          <div class="card-body">
-            <div class="card-name">Roblox 800 Robux</div>
-            <div class="card-cat">Gift Card - Roblox</div>
-            <div class="card-footer">
-              <span class="price">S/ 44.90</span>
-              <button class="btn-detail">Añadir</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tarjeta 7 -->
-        <div class="product-card" data-categoria="steam">
-          <div class="card-img">
-            <span class="card-badge">Popular</span>
-            <img src="../imagenes/steam.jpg" alt="Steam Wallet 50 USD" />
-          </div>
-          <div class="card-body">
-            <div class="card-name">Steam Wallet 50 USD</div>
-            <div class="card-cat">Gift Card - Steam</div>
-            <div class="card-footer">
-              <span class="price">S/ 189.90</span>
-              <button class="btn-detail">Añadir</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tarjeta 8 -->
-        <div class="product-card" data-categoria="roblox">
-          <div class="card-img">
-            <img src="../imagenes/roblox-premium.jpg" alt="Roblox 2000 Robux" />
-          </div>
-          <div class="card-body">
-            <div class="card-name">Roblox 2000 Robux</div>
-            <div class="card-cat">Gift Card - Roblox</div>
-            <div class="card-footer">
-              <span class="price">S/ 99.90</span>
-              <button class="btn-detail">Añadir</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============= BANNER DE OFERTAS ============= -->
-    <section>
-      <img
-        src="../imagenes/ofertas-banner.jpg"
-        class="ofertas-img"
-        alt="Aprovecha todas nuestras ofertas"
-      />
-    </section>
-
+      <section>
+        <img
+          src="../imagenes/ofertas-banner.jpg"
+          class="ofertas-img"
+          alt="Aprovecha todas nuestras ofertas"
+        />
+      </section>
     </main>
 
-    <!-- =============== FOOTER (DINAMICO) ============ -->
     <div id="site-footer"></div>
 
-    <!-- SCRIPT DEL SISTEMA (navbar y footer) -->
     <script src="../components/components.js"></script>
   </body>
 </html>
