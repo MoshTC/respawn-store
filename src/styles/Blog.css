@@ -1,0 +1,114 @@
+.titulo-Destacado {
+  padding: 10px;
+  margin: 20px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 37px;
+  letter-spacing: 1px;
+}
+.titulo-Destacado::after {
+  content: "";
+  display: block;
+  width: 125px;
+  height: 3px;
+  background: var(--cyan);
+  margin-top: 5px;
+}
+.img-destacado {
+  width: 700px;
+  padding: 15px;
+  float: left;
+}
+.contenedor-destacado {
+  background: linear-gradient(145deg, #0f172a, #020617);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin: auto;
+  height: 400px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.contenedor-destacado h1,
+.contenedor-destacado p {
+  padding: 10px;
+  text-align: justify;
+}
+.contenedor-destacado:hover,
+.articulos-recientes:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(6, 36, 60, 0.25);
+}
+
+.articulos-blog {
+  padding: 30px;
+  display: flex;
+  gap: 70px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.articulos-recientes {
+  width: 400px;
+  height: 300px;
+  text-align: center;
+}
+.articulos-recientes img {
+  width: 400px;
+  height: 200px;
+}
+
+.articulos-recientes a {
+  text-decoration: none;
+  font-size: 18px;
+  color: var(--cyan);
+  transition: 0.3s;
+  z-index: 1;
+}
+
+.articulos-recientes a:hover {
+  text-decoration: underline;
+  color: white;
+  text-shadow: 0 0 10px var(--cyan);
+}
+
+.paginacion {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+
+.paginacion button {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 40px;
+  width: 60px;
+  height: 50px;
+  padding: 10px 15px;
+  border: none;
+  background: #e5e5e5;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.paginacion .prev,
+.paginacion .next {
+  background: linear-gradient(145deg, #0f172a, #020617);
+  color: rgb(255, 255, 255);
+}
+
+.prev:hover,
+.next:hover,
+.num.activo:hover {
+  color: white;
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(6, 36, 60, 0.25);
+}
+.num.activo {
+  background: linear-gradient(145deg, #0f172a, #020617);
+  color: white;
+  font-weight: bold;
+}
