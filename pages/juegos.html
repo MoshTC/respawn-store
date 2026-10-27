@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Videojuegos — Respawn Store | Lanzamientos y Exclusivos</title>
+  <meta name="description" content="Encuentra los mejores videojuegos para PlayStation 5, Xbox Series X, Nintendo Switch y PC con despacho inmediato.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tabler Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3/dist/tabler-icons.min.css">
+  
+  <!-- Estilos -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/cart.css">
+</head>
+<body>
+
+  <div id="navbar"></div>
+
+  <main style="max-width: 1300px; margin: 0 auto; padding: 2rem 1.5rem;">
+    <!-- Breadcrumb -->
+    <div class="breadcrumb" aria-label="Ruta de navegación" style="margin-bottom: 1.5rem; font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 8px;">
+      <a href="../index.html" style="color: var(--muted); text-decoration: none;"><i class="ti ti-home"></i> Inicio</a>
+      <span>/</span>
+      <a href="productos.html" style="color: var(--muted); text-decoration: none;">Productos</a>
+      <span>/</span>
+      <span style="color: #00e5ff; font-weight: 600;">Juegos</span>
+    </div>
+
+    <!-- Header -->
+    <div style="margin-bottom: 2rem;">
+      <h1 class="section-title" style="font-size: 38px;">Catálogo de Videojuegos</h1>
+      <p class="section-sub">Los títulos más galardonados y los lanzamientos más esperados de la temporada.</p>
+    </div>
+
+    <!-- Píldoras de Plataforma para Juegos -->
+    <div class="filter-row" style="margin-bottom: 2rem;">
+      <div class="pills" id="game-pills">
+        <button class="pill active" onclick="filterGames('all')">Todos</button>
+        <button class="pill" onclick="filterGames('playstation')"><i class="ti ti-brand-playstation"></i> PlayStation 5</button>
+        <button class="pill" onclick="filterGames('xbox')"><i class="ti ti-brand-xbox"></i> Xbox Series</button>
+        <button class="pill" onclick="filterGames('nintendo')">Nintendo Switch</button>
+        <button class="pill" onclick="filterGames('pc')">PC Gamer</button>
+      </div>
+      <div>
+        <span style="font-size: 13px; color: var(--muted);"><i class="ti ti-badge-check" style="color:#22c55e;"></i> Formato Físico & Digital</span>
+      </div>
+    </div>
+
+    <!-- Grid de Juegos -->
+    <div id="games-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 3rem;"></div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <!-- Scripts -->
+  <script src="../js/data/products.js"></script>
+  <script src="../js/data/games.js"></script>
+  <script src="../js/modules/toast.js"></script>
+  <script src="../js/modules/cart.js"></script>
+  <script src="../js/modules/wishlist.js"></script>
+  <script src="../js/modules/quickview.js"></script>
+  <script src="../js/modules/search.js"></script>
+  <script src="../js/modules/catalog.js"></script>
+  <script src="../js/main.js"></script>
+
+  <script>
+    let currentGameFilter = 'all';
+
+    function renderGamesList() {
+      const container = document.getElementById('games-grid');
+      if (!container || typeof GAMES_DATA === 'undefined') return;
+
+      let list = GAMES_DATA;
+      if (currentGameFilter !== 'all') {
+        list = list.filter(g => g.category === currentGameFilter);
+      }
+
+      container.innerHTML = list.map(game => `
+        <div class="game-card" style="background: var(--bg3); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; transition: transform 0.2s, border-color 0.2s;">
+          <div class="game-img" style="height: 260px; position: relative; background: #1a1a2e;">
+            ${game.badge ? `<span style="position: absolute; top: 10px; left: 10px; background: #2663eb; color: #fff; font-size: 10px; font-weight: 800; padding: 4px 8px; border-radius: 4px; z-index: 2;">${game.badge}</span>` : ''}
+            <button class="btn-wishlist-toggle ${Wishlist.has(game.id) ? 'active' : ''}" data-id="${game.id}" onclick="Wishlist.toggle(${JSON.stringify(game).replace(/"/g, '&quot;')})" style="position: absolute; top: 10px; right: 10px; z-index: 5;">
+              <i class="ti ${Wishlist.has(game.id) ? 'ti-heart-filled' : 'ti-heart'}"></i>
+            </button>
+            <img src="../${game.image}" alt="${game.name}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div style="padding: 16px;">
+            <div style="font-size: 11px; color: #2663eb; font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">${game.platform} · ${game.genre}</div>
+            <h3 style="font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 12px; line-height: 1.3;">${game.name}</h3>
+            
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px;">
+              <div>
+                <span style="font-size: 18px; font-weight: 800; color: #00e5ff;">S/. ${Number(game.price).toFixed(2)}</span>
+                ${game.oldPrice ? `<span style="font-size: 12px; color: #555568; text-decoration: line-through; margin-left: 6px;">S/. ${Number(game.oldPrice).toFixed(2)}</span>` : ''}
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+              <button class="btn-detail" onclick="QuickView.open('${game.id}')">
+                <i class="ti ti-eye"></i> Detalles
+              </button>
+              <button class="btn-add-cart" onclick="Cart.addItem(${JSON.stringify(game).replace(/"/g, '&quot;')}, 1)">
+                <i class="ti ti-shopping-cart-plus"></i> Añadir
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function filterGames(cat) {
+      currentGameFilter = cat;
+      const pills = document.querySelectorAll('#game-pills .pill');
+      pills.forEach(p => p.classList.remove('active'));
+      event.target.closest('.pill').classList.add('active');
+      renderGamesList();
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderGamesList();
+    });
+  </script>
+
+</body>
+</html>
+

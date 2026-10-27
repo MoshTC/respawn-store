@@ -30,7 +30,7 @@ body {
 }
 
 /*Barra de navegacion*/
-nav {
+.site-header nav, nav.navbar-main {
   display: flex;
   align-items: center;
   gap: 1.5rem;

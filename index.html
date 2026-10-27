@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Respawn Store — Tienda Gaming Oficial | Consolas, Juegos y Accesorios</title>
+  <meta name="description" content="Respawn Store es la tienda gaming líder en consolas PlayStation, Xbox, Nintendo Switch, Steam Deck y videojuegos con garantía oficial y envíos a todo el Perú.">
+  <meta name="theme-color" content="#0a0a0f">
+
+  <!-- OpenGraph Metadata -->
+  <meta property="og:title" content="Respawn Store — Tienda Gaming Oficial">
+  <meta property="og:description" content="Consolas de nueva generación, videojuegos, periféricos y accesorios con despacho express y garantía oficial.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="imagenes/logoresblue.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tabler Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3/dist/tabler-icons.min.css">
+  
+  <!-- Hojas de Estilo Modulares -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/cart.css">
+</head>
+<body>
+
+  <!-- Inyección dinámica de Navbar común -->
+  <div id="navbar"></div>
+
+  <main>
+    <!-- HERO BANNER -->
+    <section class="hero" aria-label="Banner principal de bienvenida">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <span class="hero-tag">Nueva temporada 2026</span>
+        <h1>Juega en<br><span>otro nivel</span></h1>
+        <p>Las mejores consolas, mandos pro y accesorios gaming con despacho a todo el Perú. Garantía oficial en cada compra.</p>
+        <div class="hero-btns">
+          <a href="#catalogo" class="btn-primary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+            <i class="ti ti-device-gamepad-2"></i> Ver productos
+          </a>
+          <a href="pages/giftcards.html" class="btn-ghost" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+            <i class="ti ti-gift"></i> Gift Cards
+          </a>
+        </div>
+      </div>
+      <div class="hero-decoration">
+        <img src="imagenes/JUEGA SIN LIMITES.jpg" alt="Consolas y videojuegos Respawn Store" loading="eager"
+             style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+      </div>
+    </section>
+
+    <!-- BARRA DE BENEFICIOS -->
+    <div class="benefits" role="region" aria-label="Beneficios de compra">
+      <div class="benefit">
+        <i class="ti ti-shield-check" aria-hidden="true"></i>
+        <div>
+          <div class="benefit-title">Compra segura</div>
+          <div class="benefit-sub">Protección y boleta/factura</div>
+        </div>
+      </div>
+      <div class="benefit">
+        <i class="ti ti-truck-delivery" aria-hidden="true"></i>
+        <div>
+          <div class="benefit-title">Envío express</div>
+          <div class="benefit-sub">Gratis en compras &gt; S/. 299</div>
+        </div>
+      </div>
+      <div class="benefit">
+        <i class="ti ti-award" aria-hidden="true"></i>
+        <div>
+          <div class="benefit-title">Garantía oficial</div>
+          <div class="benefit-sub">12 meses de respaldo directo</div>
+        </div>
+      </div>
+      <div class="benefit">
+        <i class="ti ti-headset" aria-hidden="true"></i>
+        <div>
+          <div class="benefit-title">Soporte gamer 24/7</div>
+          <div class="benefit-sub">Asesoría especializada</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECCIÓN DE PRODUCTOS / CATÁLOGO INTERACTIVO -->
+    <section id="catalogo" class="catalog-section" aria-label="Catálogo de productos">
+      <div class="section-header-wrap" style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <h2 class="section-title">Consolas & Periféricos</h2>
+          <div class="section-sub">Selección de hardware de última generación disponible para entrega inmediata</div>
+        </div>
+        <div class="catalog-counter-badge" style="font-size: 13px; color: var(--muted); background: var(--bg4); border: 1px solid var(--border2); padding: 6px 14px; border-radius: 20px;">
+          <i class="ti ti-check" style="color: #22c55e;"></i> Stock 100% verificado
+        </div>
+      </div>
+
+      <!-- Barra de Filtros y Ordenación Reactiva -->
+      <div class="filter-row">
+        <div class="pills" role="tablist" aria-label="Categorías de consolas">
+          <button class="pill active" data-cat="all" role="tab">Todas</button>
+          <button class="pill" data-cat="playstation" role="tab"><i class="ti ti-brand-playstation"></i> PlayStation</button>
+          <button class="pill" data-cat="xbox" role="tab"><i class="ti ti-brand-xbox"></i> Xbox</button>
+          <button class="pill" data-cat="nintendo" role="tab">Nintendo</button>
+          <button class="pill" data-cat="portatil" role="tab">Consolas Portátiles</button>
+        </div>
+
+        <div style="display: flex; gap: 10px; align-items: center;">
+          <select class="sort-select" aria-label="Ordenar productos">
+            <option value="popular">Más populares</option>
+            <option value="price-asc">Precio: menor a mayor</option>
+            <option value="price-desc">Precio: mayor a menor</option>
+            <option value="name-asc">Nombre (A - Z)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Grid de Productos Renderizado Reactivamente -->
+      <div id="products-grid" class="products" aria-live="polite"></div>
+    </section>
+
+    <!-- BANNER PROMOCIONAL ACCESORIOS -->
+    <div class="promo-wrap" style="padding: 0 2rem; margin: 3rem 0;">
+      <div class="promo" style="background: linear-gradient(135deg, #10101a 0%, #161b2e 100%); border: 1px solid #1e1e2e; border-radius: 12px; display: grid; grid-template-columns: 1.2fr 1fr; overflow: hidden; align-items: center;">
+        <div style="padding: 3rem;">
+          <div class="promo-tag" style="background: rgba(38, 99, 235, 0.15); color: #00e5ff; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 1rem;">Nuevos accesorios</div>
+          <h2 style="font-family: 'Barlow Condensed', sans-serif; font-size: 42px; font-weight: 800; color: #fff; text-transform: uppercase; line-height: 1.1; margin-bottom: 0.5rem;">
+            Descubre los<br><span style="color: #2663eb;">nuevos</span><br>accesorios
+          </h2>
+          <div style="font-size: 14px; color: #00e5ff; font-weight: 600; margin-bottom: 0.5rem;">Disfruta de las nuevas experiencias inmersivas</div>
+          <p style="font-size: 14px; color: var(--muted); margin-bottom: 2rem; max-width: 420px; line-height: 1.6;">
+            Mandos profesionales, auriculares con sonido espacial 3D y bases de carga rápida diseñadas para sesiones extremas.
+          </p>
+          <div style="display: flex; gap: 12px;">
+            <a href="pages/productos.html" class="btn-primary" style="text-decoration: none; padding: 12px 24px;">Ver catálogo completo</a>
+            <a href="pages/guias.html" class="btn-ghost" style="text-decoration: none; padding: 12px 24px;">Guía de periféricos</a>
+          </div>
+        </div>
+        <div style="height: 100%; min-height: 320px;">
+          <img src="imagenes/promos.jpg" alt="Accesorios gaming Respawn" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+      </div>
+    </div>
+
+    <!-- SECCIÓN LO MÁS JUGADO -->
+    <section style="padding-top: 1rem;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 1.5rem;">
+        <div>
+          <h2 class="section-title">Lo más jugado</h2>
+          <div class="section-sub">Títulos aclamados por la crítica con despacho inmediato en formato físico y digital</div>
+        </div>
+        <a href="pages/juegos.html" class="btn-ghost" style="text-decoration: none; font-size: 12px; padding: 7px 16px;">
+          Ver todos los juegos <i class="ti ti-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="games" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem;">
+        <div class="game-card" style="background: var(--bg3); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; transition: transform 0.2s, border-color 0.2s;">
+          <div class="game-img" style="height: 240px; position: relative;">
+            <img src="imagenes/godOfwarR.jpg" alt="God of War Ragnarök" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+            <span style="position: absolute; top: 10px; left: 10px; background: #2663eb; color: #fff; font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 4px;">PS5</span>
+          </div>
+          <div style="padding: 14px;">
+            <div style="font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 3px;">God of War Ragnarök</div>
+            <div style="font-size: 12px; color: var(--muted); margin-bottom: 10px;">PlayStation 5 · Acción</div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 16px; font-weight: 800; color: #00e5ff;">S/. 249.00</span>
+              <button class="btn-add-cart" onclick="Cart.addItem({ id: 'gow-ragnarok', name: 'God of War Ragnarök', price: 249, image: 'imagenes/godOfwarR.jpg', brand: 'PlayStation' }, 1)">
+                <i class="ti ti-plus"></i> Añadir
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="game-card" style="background: var(--bg3); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; transition: transform 0.2s, border-color 0.2s;">
+          <div class="game-img" style="height: 240px; position: relative;">
+            <img src="imagenes/HaloINf.jpg" alt="Halo Infinite" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+            <span style="position: absolute; top: 10px; left: 10px; background: #107c10; color: #fff; font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 4px;">XBOX</span>
+          </div>
+          <div style="padding: 14px;">
+            <div style="font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 3px;">Halo Infinite</div>
+            <div style="font-size: 12px; color: var(--muted); margin-bottom: 10px;">Xbox Series X · FPS</div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 16px; font-weight: 800; color: #00e5ff;">S/. 189.00</span>
+              <button class="btn-add-cart" onclick="Cart.addItem({ id: 'halo-infinite', name: 'Halo Infinite', price: 189, image: 'imagenes/HaloINf.jpg', brand: 'Xbox' }, 1)">
+                <i class="ti ti-plus"></i> Añadir
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="game-card" style="background: var(--bg3); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; transition: transform 0.2s, border-color 0.2s;">
+          <div class="game-img" style="height: 240px; position: relative;">
+            <img src="imagenes/zelda.jpg" alt="Zelda: Tears of the Kingdom" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+            <span style="position: absolute; top: 10px; left: 10px; background: #e60012; color: #fff; font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 4px;">SWITCH</span>
+          </div>
+          <div style="padding: 14px;">
+            <div style="font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 3px;">Zelda: Tears of the Kingdom</div>
+            <div style="font-size: 12px; color: var(--muted); margin-bottom: 10px;">Nintendo Switch · Aventura</div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 16px; font-weight: 800; color: #00e5ff;">S/. 269.00</span>
+              <button class="btn-add-cart" onclick="Cart.addItem({ id: 'zelda-totk', name: 'The Legend of Zelda: Tears of the Kingdom', price: 269, image: 'imagenes/zelda.jpg', brand: 'Nintendo' }, 1)">
+                <i class="ti ti-plus"></i> Añadir
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="game-card" style="background: var(--bg3); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; transition: transform 0.2s, border-color 0.2s;">
+          <div class="game-img" style="height: 240px; position: relative;">
+            <img src="imagenes/spiderman2.jpg" alt="Spider-Man 2" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+            <span style="position: absolute; top: 10px; left: 10px; background: #2663eb; color: #fff; font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 4px;">PS5</span>
+          </div>
+          <div style="padding: 14px;">
+            <div style="font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 3px;">Spider-Man 2</div>
+            <div style="font-size: 12px; color: var(--muted); margin-bottom: 10px;">PlayStation 5 · Acción</div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 16px; font-weight: 800; color: #00e5ff;">S/. 259.00</span>
+              <button class="btn-add-cart" onclick="Cart.addItem({ id: 'spiderman-2', name: 'Marvel\'s Spider-Man 2', price: 259, image: 'imagenes/spiderman2.jpg', brand: 'PlayStation' }, 1)">
+                <i class="ti ti-plus"></i> Añadir
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BANNER DE SUSCRIPCIÓN INFERIOR -->
+    <div class="banner" style="position: relative; background: linear-gradient(135deg, #0d0d1a 0%, #151a30 100%); border: 1px solid #1e1e2e; border-radius: 12px; padding: 3rem 2rem; margin: 3rem 2rem; text-align: center; overflow: hidden;">
+      <div class="banner-glow" style="position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, rgba(38, 99, 235, 0.12) 0%, transparent 70%);"></div>
+      <div class="banner-content" style="position: relative; z-index: 2; max-width: 580px; margin: 0 auto;">
+        <span style="background: rgba(38, 99, 235, 0.15); color: #2663eb; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 12px;">Comunidad Respawn</span>
+        <h3 style="font-family: 'Barlow Condensed', sans-serif; font-size: 36px; font-weight: 800; color: #fff; text-transform: uppercase; margin-bottom: 8px;">¿Listo para el siguiente nivel?</h3>
+        <p style="color: var(--muted); font-size: 14px; margin-bottom: 1.5rem;">Suscríbete a nuestro boletín y obtén un 10% de descuento automático en tu primera compra con el cupón <b>RESPAWN10</b>.</p>
+        <button class="btn-primary" onclick="Toast.show('¡Usa el código <b>RESPAWN10</b> en tu carrito para 10% de descuento!', 'success', 'ti-discount-check')" style="padding: 12px 28px;">
+          <i class="ti ti-ticket"></i> Obtener mi cupón de bienvenida
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Inyección dinámica de Footer común -->
+  <div id="site-footer"></div>
+
+  <!-- Scripts del Sistema E-Commerce -->
+  <script src="js/data/products.js"></script>
+  <script src="js/data/games.js"></script>
+  <script src="js/modules/toast.js"></script>
+  <script src="js/modules/cart.js"></script>
+  <script src="js/modules/wishlist.js"></script>
+  <script src="js/modules/quickview.js"></script>
+  <script src="js/modules/search.js"></script>
+  <script src="js/modules/catalog.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Inicialización del Catálogo en el Inicio -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      Catalog.init('products-grid');
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centro de Ayuda & Soporte — Respawn Store</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3/dist/tabler-icons.min.css">
+  
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/cart.css">
+</head>
+<body>
+
+  <div id="navbar"></div>
+
+  <main style="max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem;">
+    <!-- Breadcrumb -->
+    <div class="breadcrumb" aria-label="Ruta de navegación" style="margin-bottom: 1.5rem; font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 8px;">
+      <a href="../index.html" style="color: var(--muted); text-decoration: none;"><i class="ti ti-home"></i> Inicio</a>
+      <span>/</span>
+      <span style="color: #00e5ff; font-weight: 600;">Ayuda</span>
+    </div>
+
+    <!-- Hero de Ayuda con Buscador Predictivo -->
+    <div style="background: linear-gradient(135deg, #10101a 0%, #151a30 100%); border: 1px solid #1e1e2e; border-radius: 12px; padding: 3.5rem 2rem; margin-bottom: 3rem; text-align: center; position: relative;">
+      <span style="background: rgba(38, 99, 235, 0.15); color: #00e5ff; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 12px;">Servicio al Cliente</span>
+      <h1 class="section-title" style="font-size: 42px; margin-bottom: 10px;">¿En qué podemos ayudarte hoy?</h1>
+      <p style="color: var(--muted); max-width: 550px; margin: 0 auto 2rem; line-height: 1.6;">Encuentra guías sobre envíos, garantías, configuración de consolas y activación de códigos.</p>
+
+      <div style="max-width: 500px; margin: 0 auto; position: relative;">
+        <div class="search-box" style="width: 100%; height: 46px; border-radius: 25px; padding: 0 18px;">
+          <i class="ti ti-search search-icon" style="font-size: 18px;"></i>
+          <input type="text" id="help-search-input" placeholder="Buscar: envíos, garantías, boleta, PS5..." style="font-size: 14px;" oninput="filterHelpTopics(this.value)">
+        </div>
+      </div>
+    </div>
+
+    <!-- Módulos de Ayuda Rápida -->
+    <div id="help-topics-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 3rem;">
+      <a href="faq.html" class="help-card" style="text-decoration: none; background: var(--bg3); border: 1px solid var(--border); border-radius: 10px; padding: 2rem; transition: transform 0.2s, border-color 0.2s; display: block;">
+        <i class="ti ti-truck" style="font-size: 32px; color: #2663eb; margin-bottom: 14px; display: block;"></i>
+        <h3 style="font-size: 18px; color: #fff; margin-bottom: 6px;">Envíos y Seguimiento</h3>
+        <p style="font-size: 13px; color: var(--muted); line-height: 1.5;">Tiempos de entrega, cobertura a provincias por Olva y cálculo de envío gratis.</p>
+      </a>
+
+      <a href="faq.html" class="help-card" style="text-decoration: none; background: var(--bg3); border: 1px solid var(--border); border-radius: 10px; padding: 2rem; transition: transform 0.2s, border-color 0.2s; display: block;">
+        <i class="ti ti-shield-check" style="font-size: 32px; color: #22c55e; margin-bottom: 14px; display: block;"></i>
+        <h3 style="font-size: 18px; color: #fff; margin-bottom: 6px;">Garantías Oficiales</h3>
+        <p style="font-size: 13px; color: var(--muted); line-height: 1.5;">Procesos de validación con Sony, Microsoft y Nintendo con 12 meses de cobertura.</p>
+      </a>
+
+      <a href="giftcards.html" class="help-card" style="text-decoration: none; background: var(--bg3); border: 1px solid var(--border); border-radius: 10px; padding: 2rem; transition: transform 0.2s, border-color 0.2s; display: block;">
+        <i class="ti ti-gift" style="font-size: 32px; color: #00e5ff; margin-bottom: 14px; display: block;"></i>
+        <h3 style="font-size: 18px; color: #fff; margin-bottom: 6px;">Canje de Gift Cards</h3>
+        <p style="font-size: 13px; color: var(--muted); line-height: 1.5;">Cómo activar tus códigos digitales paso a paso en Steam, PlayStation y Xbox.</p>
+      </a>
+
+      <a href="faq.html" class="help-card" style="text-decoration: none; background: var(--bg3); border: 1px solid var(--border); border-radius: 10px; padding: 2rem; transition: transform 0.2s, border-color 0.2s; display: block;">
+        <i class="ti ti-credit-card" style="font-size: 32px; color: #f59e0b; margin-bottom: 14px; display: block;"></i>
+        <h3 style="font-size: 18px; color: #fff; margin-bottom: 6px;">Métodos de Pago</h3>
+        <p style="font-size: 13px; color: var(--muted); line-height: 1.5;">Pagos por Yape, Plin, tarjetas y transferencias bancarias directas sin recargo.</p>
+      </a>
+
+      <a href="guias.html" class="help-card" style="text-decoration: none; background: var(--bg3); border: 1px solid var(--border); border-radius: 10px; padding: 2rem; transition: transform 0.2s, border-color 0.2s; display: block;">
+        <i class="ti ti-device-laptop" style="font-size: 32px; color: #ec4899; margin-bottom: 14px; display: block;"></i>
+        <h3 style="font-size: 18px; color: #fff; margin-bottom: 6px;">Guías Técnicas</h3>
+        <p style="font-size: 13px; color: var(--muted); line-height: 1.5;">Tutoriales para cambiar SSD en PS5, optimizar Steam Deck y sincronizar mandos.</p>
+      </a>
+
+      <a href="contacto.html" class="help-card" style="text-decoration: none; background: var(--bg3); border: 1px solid var(--border); border-radius: 10px; padding: 2rem; transition: transform 0.2s, border-color 0.2s; display: block;">
+        <i class="ti ti-mail" style="font-size: 32px; color: #8b5cf6; margin-bottom: 14px; display: block;"></i>
+        <h3 style="font-size: 18px; color: #fff; margin-bottom: 6px;">Atención Personalizada</h3>
+        <p style="font-size: 13px; color: var(--muted); line-height: 1.5;">Escríbenos directamente para consultas personalizadas o soporte postventa.</p>
+      </a>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <!-- Scripts -->
+  <script src="../js/data/products.js"></script>
+  <script src="../js/data/games.js"></script>
+  <script src="../js/modules/toast.js"></script>
+  <script src="../js/modules/cart.js"></script>
+  <script src="../js/modules/wishlist.js"></script>
+  <script src="../js/modules/quickview.js"></script>
+  <script src="../js/modules/search.js"></script>
+  <script src="../js/main.js"></script>
+
+  <script>
+    function filterHelpTopics(query) {
+      const q = query.trim().toLowerCase();
+      document.querySelectorAll('#help-topics-grid .help-card').forEach(card => {
+        const text = card.textContent.toLowerCase();
+        if (text.includes(q)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
+

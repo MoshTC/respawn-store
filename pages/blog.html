@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Gaming & Noticias — Respawn Store</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3/dist/tabler-icons.min.css">
+  
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/cart.css">
+</head>
+<body>
+
+  <div id="navbar"></div>
+
+  <main style="max-width: 1300px; margin: 0 auto; padding: 2rem 1.5rem;">
+    <!-- Breadcrumb -->
+    <div class="breadcrumb" aria-label="Ruta de navegación" style="margin-bottom: 1.5rem; font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 8px;">
+      <a href="../index.html" style="color: var(--muted); text-decoration: none;"><i class="ti ti-home"></i> Inicio</a>
+      <span>/</span>
+      <a href="comunidad.html" style="color: var(--muted); text-decoration: none;">Comunidad</a>
+      <span>/</span>
+      <span style="color: #00e5ff; font-weight: 600;">Blog</span>
+    </div>
+
+    <div style="margin-bottom: 2.5rem;">
+      <h1 class="section-title" style="font-size: 38px;">Respawn Gaming News & Artículos</h1>
+      <p class="section-sub">Análisis de lanzamientos, comparativas de hardware, guías competitivas y tendencias de la industria.</p>
+    </div>
+
+    <!-- Grid de Artículos -->
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 3.5rem;">
+      <article style="background: var(--bg3); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column;">
+        <div style="height: 200px; overflow: hidden;">
+          <img src="../imagenes/eldenring.png" alt="Elden Ring DLC" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div style="padding: 1.5rem; flex: 1; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); margin-bottom: 8px;">
+            <span style="color: #2663eb; font-weight: 700; text-transform: uppercase;">Análisis & Review</span>
+            <span>Lectura: 6 min</span>
+          </div>
+          <h3 style="font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 8px; line-height: 1.3;">
+            Todo lo que debes saber antes de jugar Shadow of the Erdtree
+          </h3>
+          <p style="font-size: 13px; color: var(--muted); line-height: 1.5; margin-bottom: 1.25rem; flex: 1;">
+            Analizamos la dificultad, nuevas clases y los requisitos recomendados para adentrarse en la mayor expansión del universo de FromSoftware.
+          </p>
+          <div style="border-top: 1px solid var(--border); padding-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 12px; color: #555568;">24 Oct 2026</span>
+            <button class="btn-detail" onclick="Toast.show('Artículo disponible para lectura en la comunidad', 'info')">Leer Artículo <i class="ti ti-arrow-right"></i></button>
+          </div>
+        </div>
+      </article>
+
+      <article style="background: var(--bg3); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column;">
+        <div style="height: 200px; overflow: hidden;">
+          <img src="../imagenes/steamdeck.png" alt="Steam Deck OLED" style="width: 100%; height: 100%; object-fit: contain; background: #1a1a2e; padding: 10px;">
+        </div>
+        <div style="padding: 1.5rem; flex: 1; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); margin-bottom: 8px;">
+            <span style="color: #00e5ff; font-weight: 700; text-transform: uppercase;">Hardware & Benchmarks</span>
+            <span>Lectura: 8 min</span>
+          </div>
+          <h3 style="font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 8px; line-height: 1.3;">
+            Steam Deck OLED vs ASUS ROG Ally X: ¿Cuál es la mejor portátil?
+          </h3>
+          <p style="font-size: 13px; color: var(--muted); line-height: 1.5; margin-bottom: 1.25rem; flex: 1;">
+            Comparamos autonomía de batería, rendimiento térmico en títulos AAA y la experiencia de usuario entre SteamOS y Windows 11.
+          </p>
+          <div style="border-top: 1px solid var(--border); padding-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 12px; color: #555568;">21 Oct 2026</span>
+            <button class="btn-detail" onclick="Toast.show('Artículo disponible para lectura en la comunidad', 'info')">Leer Artículo <i class="ti ti-arrow-right"></i></button>
+          </div>
+        </div>
+      </article>
+
+      <article style="background: var(--bg3); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column;">
+        <div style="height: 200px; overflow: hidden;">
+          <img src="../imagenes/mandops.png" alt="DualSense Edge" style="width: 100%; height: 100%; object-fit: contain; background: #1a1a2e; padding: 10px;">
+        </div>
+        <div style="padding: 1.5rem; flex: 1; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); margin-bottom: 8px;">
+            <span style="color: #22c55e; font-weight: 700; text-transform: uppercase;">Periféricos Pro</span>
+            <span>Lectura: 5 min</span>
+          </div>
+          <h3 style="font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 8px; line-height: 1.3;">
+            Configuración competitiva de gatillos y palancas para FPS
+          </h3>
+          <p style="font-size: 13px; color: var(--muted); line-height: 1.5; margin-bottom: 1.25rem; flex: 1;">
+            Aprende a calibrar las curvas de sensibilidad y tiempos de respuesta en mandos pro para dominar en Warzone y Apex Legends.
+          </p>
+          <div style="border-top: 1px solid var(--border); padding-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 12px; color: #555568;">18 Oct 2026</span>
+            <button class="btn-detail" onclick="Toast.show('Artículo disponible para lectura en la comunidad', 'info')">Leer Artículo <i class="ti ti-arrow-right"></i></button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <!-- Scripts -->
+  <script src="../js/data/products.js"></script>
+  <script src="../js/data/games.js"></script>
+  <script src="../js/modules/toast.js"></script>
+  <script src="../js/modules/cart.js"></script>
+  <script src="../js/modules/wishlist.js"></script>
+  <script src="../js/modules/quickview.js"></script>
+  <script src="../js/modules/search.js"></script>
+  <script src="../js/main.js"></script>
+
+</body>
+</html>
+

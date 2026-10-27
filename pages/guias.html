@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consejos y Guías Técnicas — Respawn Store</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3/dist/tabler-icons.min.css">
+  
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/cart.css">
+</head>
+<body>
+
+  <div id="navbar"></div>
+
+  <main style="max-width: 1300px; margin: 0 auto; padding: 2rem 1.5rem;">
+    <!-- Breadcrumb -->
+    <div class="breadcrumb" aria-label="Ruta de navegación" style="margin-bottom: 1.5rem; font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 8px;">
+      <a href="../index.html" style="color: var(--muted); text-decoration: none;"><i class="ti ti-home"></i> Inicio</a>
+      <span>/</span>
+      <a href="comunidad.html" style="color: var(--muted); text-decoration: none;">Comunidad</a>
+      <span>/</span>
+      <span style="color: #00e5ff; font-weight: 600;">Consejos y Guías</span>
+    </div>
+
+    <div style="margin-bottom: 2.5rem;">
+      <h1 class="section-title" style="font-size: 38px;">Guías Técnicas y Mantenimiento Gamer</h1>
+      <p class="section-sub">Tutoriales redactados por ingenieros y técnicos para maximizar el rendimiento y la vida útil de tus consolas.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 3.5rem;">
+      <div style="background: var(--bg3); border: 1px solid var(--border); border-radius: 12px; padding: 1.75rem;">
+        <div style="width: 44px; height: 44px; border-radius: 8px; background: rgba(38, 99, 235, 0.15); color: #2663eb; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 1rem;">
+          <i class="ti ti-device-sd-card"></i>
+        </div>
+        <h3 style="font-size: 18px; color: #fff; margin-bottom: 8px;">Instalación de SSD M.2 en PS5</h3>
+        <p style="font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 1.25rem;">
+          Paso a paso sobre cómo retirar la carcasa de tu PS5, colocar un SSD NVMe Gen4 con disipador de calor y formatearlo desde el sistema operativo.
+        </p>
+        <button class="btn-detail" onclick="Toast.show('Guía completa disponible en el foro de Discord', 'info')">Ver Tutorial Paso a Paso</button>
+      </div>
+
+      <div style="background: var(--bg3); border: 1px solid var(--border); border-radius: 12px; padding: 1.75rem;">
+        <div style="width: 44px; height: 44px; border-radius: 8px; background: rgba(0, 229, 255, 0.15); color: #00e5ff; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 1rem;">
+          <i class="ti ti-battery-charging"></i>
+        </div>
+        <h3 style="font-size: 18px; color: #fff; margin-bottom: 8px;">Calibración de Batería en Portátiles</h3>
+        <p style="font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 1.25rem;">
+          Consejos esenciales para extender la vida útil de la batería en Steam Deck, Nintendo Switch y ASUS ROG Ally configurando perfiles TDP.
+        </p>
+        <button class="btn-detail" onclick="Toast.show('Guía completa disponible en el foro de Discord', 'info')">Ver Tutorial Paso a Paso</button>
+      </div>
+
+      <div style="background: var(--bg3); border: 1px solid var(--border); border-radius: 12px; padding: 1.75rem;">
+        <div style="width: 44px; height: 44px; border-radius: 8px; background: rgba(34, 197, 94, 0.15); color: #22c55e; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 1rem;">
+          <i class="ti ti-device-gamepad"></i>
+        </div>
+        <h3 style="font-size: 18px; color: #fff; margin-bottom: 8px;">Prevención y Limpieza de Drift</h3>
+        <p style="font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 1.25rem;">
+          Cómo limpiar los potenciómetros de tus mandos con alcohol isopropílico de alta pureza y evitar la acumulación de polvo en los sticks.
+        </p>
+        <button class="btn-detail" onclick="Toast.show('Guía completa disponible en el foro de Discord', 'info')">Ver Tutorial Paso a Paso</button>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <!-- Scripts -->
+  <script src="../js/data/products.js"></script>
+  <script src="../js/data/games.js"></script>
+  <script src="../js/modules/toast.js"></script>
+  <script src="../js/modules/cart.js"></script>
+  <script src="../js/modules/wishlist.js"></script>
+  <script src="../js/modules/quickview.js"></script>
+  <script src="../js/modules/search.js"></script>
+  <script src="../js/main.js"></script>
+
+</body>
+</html>
+
