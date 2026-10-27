@@ -87,7 +87,7 @@ export default function About() {
               <button
                 type="button"
                 className="btn-ghost"
-                onClick={() => scrollToSection('descubre-tienda')}
+                onClick={() => scrollToSection('equipo')}
               >
                 Leer más
               </button>
@@ -104,42 +104,6 @@ export default function About() {
                 objectPosition: 'center center',
               }}
             />
-          </div>
-        </div>
-      </div>
-
-      <div
-        className="promo-wrap revelar"
-        id="descubre-tienda"
-        style={{ marginTop: '2rem' }}
-      >
-        <div className="promo">
-          <div>
-            <div className="promo-tag">Conoce más</div>
-            <h2>
-              Descubre <span>Respawn Store</span>
-            </h2>
-            <p>
-              Acompáñanos a descubrir todos los servicios que tenemos. Conoce de
-              primera mano todo lo que hace única a nuestra tienda.
-            </p>
-          </div>
-          <div className="promo-img" style={{ border: 'none' }}>
-            <video
-              controls
-              poster={getAssetUrl('imagenes/poster-video.png')}
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                borderRadius: '10px',
-                outline: 'none',
-                display: 'block',
-              }}
-            >
-              <source src={getAssetUrl('media/video-intro.mp4')} type="video/mp4" />
-              Tu navegador no soporta el elemento de video.
-            </video>
           </div>
         </div>
       </div>
